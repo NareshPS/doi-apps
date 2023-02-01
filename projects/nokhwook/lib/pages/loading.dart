@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:csv/csv.dart';
-import 'package:nokhwook/word.dart';
+import 'package:nokhwook/utils/word.dart';
 
 class Loading extends StatefulWidget {
   const Loading({super.key});
@@ -32,13 +32,15 @@ class _LoadingState extends State<Loading> {
       );
     }).toList();
 
-    // await Future.delayed(Duration(seconds: 5));
-
     if (mounted) {
       Navigator.pushReplacementNamed(
         context,
         '/home',
-        arguments: {'words': words}
+        arguments: {
+          'category': 'All Words',
+          'words': words,
+          'subset': List.generate(words.length, (i) => i)
+        }
       );
     }
   }

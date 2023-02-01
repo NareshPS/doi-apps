@@ -1,22 +1,19 @@
+
 import 'package:flutter/material.dart';
-import 'package:nokhwook/word.dart';
-import 'package:nokhwook/components/word_card.dart';
+import 'package:nokhwook/pages/side_bar.dart';
+import 'package:nokhwook/pages/stage.dart';
+import 'package:nokhwook/utils/subset.dart';
+import 'package:nokhwook/utils/word.dart';
 
-class Home extends StatefulWidget {
+class Home extends StatelessWidget {
   const Home({super.key});
-
-  @override
-  _HomeState createState() => _HomeState();
-}
-
-class _HomeState extends State<Home>{
-  int wordId = 0;
-  List<Word<WordItem>> words = [];
 
   @override
   Widget build(BuildContext context) {
     final arguments = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>;
-    words = words.isEmpty? arguments['words']: words;
+    List<Word<WordItem>> words = arguments['words'];
+    List<int> subset = arguments['subset'];
+    String category = arguments['category'] ?? 'Home';
 
     return Scaffold(
       backgroundColor: Colors.amber[200],
@@ -25,22 +22,10 @@ class _HomeState extends State<Home>{
         centerTitle: true,
         backgroundColor: Colors.red[400],
       ),
-      body: WordCard(
-        word: words[wordId],
-        memorize: () {
-          setState(() {
-            words.removeAt(wordId);
-          });
-        },
-      ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.red[400],
-        onPressed: () {
-          setState(() {
-            wordId = wordId >= words.length-1? 0: wordId + 1;
-          });
-        },
-        child: const Icon(Icons.navigate_next),
+      drawer: SideBar(words: words),
+      body: Stage(
+        title: category,
+        words: WordSubset(words: words).resolve(subset)
       ),
     );
   }

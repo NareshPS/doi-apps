@@ -6,6 +6,6 @@ void main () => runApp(MaterialApp(
   // home: Stage(),
   routes: {
     '/': (context) => const Loading(),
-    '/home':(context) => const Home()
+    '/home': ((context) => const Home()),
   },
 ));
