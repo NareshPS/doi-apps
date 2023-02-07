@@ -2,17 +2,20 @@
 import 'package:flutter/material.dart';
 import 'package:nokhwook/pages/side_bar.dart';
 import 'package:nokhwook/pages/stage.dart';
+import 'package:nokhwook/services/notification_service.dart';
 import 'package:nokhwook/utils/subset.dart';
 import 'package:nokhwook/utils/word.dart';
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+  final NotificationService notificationService;
+  const Home({super.key, required this.notificationService});
 
   @override
   Widget build(BuildContext context) {
     final arguments = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>;
     List<Word<WordItem>> words = arguments['words'];
     List<int> subset = arguments['subset'];
+    int start = arguments['start'] ?? 0;
     String category = arguments['category'] ?? 'Home';
 
     return Scaffold(
@@ -25,7 +28,8 @@ class Home extends StatelessWidget {
       drawer: SideBar(words: words),
       body: Stage(
         title: category,
-        words: WordSubset(words: words).resolve(subset)
+        words: WordSubset(words: words).resolve(subset),
+        start: start
       ),
     );
   }

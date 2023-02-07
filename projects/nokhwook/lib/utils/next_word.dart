@@ -3,13 +3,17 @@ import 'dart:math';
 import 'package:nokhwook/utils/word.dart';
 
 abstract class NextWord {
-  int _index = -1;
+  int _index;
+
+  NextWord({start = -1}): _index = start;
 
   int get(List<Word<WordItem>> words);
   get index => _index;
 }
 
 class OrderedNext extends NextWord {
+  OrderedNext({start = -1}):super(start: start);
+
   @override
   int get(words) {
     _index = (_index + 1)%words.length;

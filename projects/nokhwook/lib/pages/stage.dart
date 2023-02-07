@@ -9,20 +9,28 @@ import 'package:shared_preferences/shared_preferences.dart';
 class Stage extends StatefulWidget {
   final List<Word<WordItem>> words;
   final String title;
+  final int start;
   
-  const Stage({super.key, required this.words, required this.title});
+  const Stage({
+    super.key,
+    required this.words,
+    required this.title,
+    required this.start
+  });
 
   @override
   State<Stage> createState() => _StageState();
 }
 
 class _StageState extends State<Stage>{
-  int wordId = 0;
-  NextWord nextWord = OrderedNext();
-  
+  late int wordId;
+  late NextWord nextWord;
+
   @override
   void initState() {
     super.initState();
+    wordId = widget.start;
+    nextWord = OrderedNext(start: wordId);
   }
 
   @override
@@ -58,7 +66,7 @@ class _StageState extends State<Stage>{
                   ToggleIconButton(
                     iconData: Icons.shuffle,
                     onOn: () => setState(() => nextWord = RandomNext()),
-                    onOff: () => setState(() => nextWord = OrderedNext()),
+                    onOff: () => setState(() => nextWord = OrderedNext(start: wordId)),
                   ),
 
                   const SizedBox(height: 16.0),

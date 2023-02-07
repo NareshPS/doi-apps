@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:nokhwook/pages/home.dart';
 import 'package:nokhwook/pages/loading.dart';
+import 'package:nokhwook/services/navigation_service.dart';
 
-void main () => runApp(MaterialApp(
-  // home: Stage(),
-  routes: {
-    '/': (context) => const Loading(),
-    '/home': ((context) => const Home()),
-  },
-));
+Future<void> main () async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  runApp(
+    MaterialApp(
+      navigatorKey: NavigationService.navigatorKey,
+      // home: Stage(),
+      routes: {
+        '/': (context) => Loading(notificationService: notificationService),
+        '/home': ((context) => Home(notificationService: notificationService)),
+      },
+    )
+  );
+}
