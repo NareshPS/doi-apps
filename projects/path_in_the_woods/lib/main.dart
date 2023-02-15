@@ -5,6 +5,14 @@ import 'package:path_in_the_woods/pages/active_track.dart';
 import 'package:path_in_the_woods/pages/active_track_loading.dart';
 import 'package:path_in_the_woods/pages/track_list.dart';
 import 'package:path_in_the_woods/pages/side_bar.dart';
+import 'package:path_in_the_woods/services/location_service.dart';
+
+LocationService locationService = LocationService(
+  radius: 20,
+  interval: const Duration(seconds: 30),
+  notificationText: "Click to see the details.",
+  notificationTitle: "Recording Track",
+);
 
 void main() async {
   final Isar isar = await Isar.open([TrackSchema]);
@@ -17,8 +25,14 @@ void main() async {
   runApp(MaterialApp(
     routes: {
       '/': (context) => const Home(),
-      '/active_track_loading': (context) => ActiveTrackLoading(db: isar),
-      '/active_track': (context) => ActiveTrack(db: isar),
+      '/active_track_loading': (context) => ActiveTrackLoading(
+        db: isar,
+        location: locationService
+      ),
+      '/active_track': (context) => ActiveTrack(
+        db: isar,
+        location: locationService
+      ),
       '/track_list': ((context) => TrackList(db: isar)),
     },
   ));

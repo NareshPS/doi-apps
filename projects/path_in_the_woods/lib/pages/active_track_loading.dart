@@ -2,72 +2,48 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:isar/isar.dart';
-import 'package:location/location.dart';
-import 'package:path_in_the_woods/models/track.dart';
-import 'package:path_in_the_woods/pages/active_track.dart';
+import 'package:path_in_the_woods/services/location_service.dart';
 
 class ActiveTrackLoading extends StatefulWidget {
+  final LocationService location;
   final Isar db;
-  const ActiveTrackLoading({super.key, required this.db});
+
+  const ActiveTrackLoading({
+    super.key,
+    required this.db,
+    required this.location,
+  });
 
   @override
   State<ActiveTrackLoading> createState() => _ActiveTrackLoadingState();
 }
 
 class _ActiveTrackLoadingState extends State<ActiveTrackLoading> {
-  Location location = Location();
-  String loadingMessage = 'Checking location service...';
-  late LocationData current;
+  String loadingMessage = 'Checking location services...';
 
   void updateMessage(message) {
     setState(() {
-      loadingMessage = message;
+      loadingMessage = '$message' ' Status: ${widget.location.permission.name}';
     });
   }
 
-  void checkPermissions() async {
-    bool serviceEnabled = await location.serviceEnabled();
-    PermissionStatus permissionStatus = PermissionStatus.denied;
-    bool locationAllowed(p) => p == PermissionStatus.granted;
-    
-    if (serviceEnabled) {
-      serviceEnabled = await location.requestService();
-    }
+  void checkPermissionsAndRedirect() async {
+    updateMessage(loadingMessage);
+    await widget.location.initialize();
 
-    if (serviceEnabled) {
-      serviceEnabled = await location.changeSettings(
-        accuracy: LocationAccuracy.high,
-        // interval: 30000,
-        distanceFilter: 10.0,
-      );
-    }
+    if (widget.location.allowed()) {
+      updateMessage('Location services available');
 
-    if (serviceEnabled) {
-      updateMessage('Location service is available. Checking for permissions...');
-      permissionStatus = await location.hasPermission();
-
-      if (!locationAllowed(permissionStatus)) {
-        updateMessage('Location permissions are unavailable. Requesting...');
-        permissionStatus = await location.requestPermission();
-      }
-    }
-
-    if (!locationAllowed(permissionStatus)) {
-      updateMessage('LocationServiceStatus: $serviceEnabled PermissionStatus: $permissionStatus');
-
-      if (mounted){
-        Navigator.pop(context, {
-          'ServiceStatus': serviceEnabled,
-          'PermissionStatus': permissionStatus
-        });
-      } else {
-        print('active_trail_loading not mounted');
+      if (mounted) {
+        Navigator.pushReplacementNamed(context, '/active_track');
       }
     } else {
-      updateMessage('Loading tracks...');
+      updateMessage('Location services unavailable');
 
-      if (mounted){
-        Navigator.pushReplacementNamed(context, '/active_track');
+      if (mounted) {
+        Navigator.pop(context, {
+          'PermissionStatus': widget.location.permission.name
+        });
       }
     }
   }
@@ -75,7 +51,7 @@ class _ActiveTrackLoadingState extends State<ActiveTrackLoading> {
   @override
   void initState() {
     super.initState();
-    checkPermissions();
+    checkPermissionsAndRedirect();
   }
 
   @override
