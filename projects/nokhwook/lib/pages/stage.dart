@@ -10,12 +10,14 @@ class Stage extends StatefulWidget {
   final List<Word<WordItem>> words;
   final String title;
   final int start;
+  final VoidCallback? refreshAction;
   
   const Stage({
     super.key,
     required this.words,
     required this.title,
-    required this.start
+    required this.start,
+    this.refreshAction,
   });
 
   @override
@@ -68,7 +70,14 @@ class _StageState extends State<Stage>{
                     onOn: () => setState(() => nextWord = RandomNext()),
                     onOff: () => setState(() => nextWord = OrderedNext(start: wordId)),
                   ),
-
+                  const SizedBox(height: 16.0),
+                  if (widget.refreshAction != null)
+                    IconButton(
+                      icon: const Icon(Icons.refresh),
+                      onPressed: widget.refreshAction,
+                      color: Colors.red[400],
+                    )
+                  ,
                   const SizedBox(height: 16.0),
                   FutureBuilder<SharedPreferences?>(
                     future: SharedPreferences.getInstance(),

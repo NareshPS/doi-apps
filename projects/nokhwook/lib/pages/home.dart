@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:nokhwook/pages/side_bar.dart';
 import 'package:nokhwook/pages/stage.dart';
@@ -6,10 +5,15 @@ import 'package:nokhwook/services/notification_service.dart';
 import 'package:nokhwook/utils/subset.dart';
 import 'package:nokhwook/utils/word.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   final NotificationService notificationService;
   const Home({super.key, required this.notificationService});
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     final arguments = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>;
@@ -29,7 +33,10 @@ class Home extends StatelessWidget {
       body: Stage(
         title: category,
         words: WordSubset(words: words).resolve(subset),
-        start: start
+        start: start,
+        refreshAction: () => setState(() {
+          subset.shuffle();
+        }),
       ),
     );
   }
