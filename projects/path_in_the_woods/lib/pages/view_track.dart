@@ -13,11 +13,10 @@ class ViewTrack extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('View Track: $trackName'),
+        title: Text('Track: ${trackName.isNotEmpty? trackName: track.id}'),
         centerTitle: true,
-        backgroundColor: Colors.green[700],
       ),
-      body: TrackDetails(track: track)
+      body: TrackDetails(track: track),
     );
   }
 }

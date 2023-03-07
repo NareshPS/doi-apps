@@ -10,7 +10,6 @@ class InfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.green[50],
       margin: const EdgeInsets.only(bottom: 1.0, left: 1.0, right: 1.0),
       child: Padding(
         padding: const EdgeInsets.all(8.0),

@@ -12,18 +12,12 @@ class SimpleInfo extends StatelessWidget {
       children: <Widget>[
         Text(
           title.toUpperCase(),
-          style: TextStyle(
-            color: Colors.grey[600],
-          ),
+          style: Theme.of(context).textTheme.labelMedium,
         ),
         const SizedBox(width: 5.0),
         Text(
           value,
-          style: TextStyle(
-            color: Colors.green[600],
-            letterSpacing: 1.15,
-            fontWeight: FontWeight.w600
-          ),
+          style: Theme.of(context).textTheme.labelLarge,
         )
       ]
     );

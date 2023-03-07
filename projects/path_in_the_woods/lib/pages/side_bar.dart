@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:path_in_the_woods/pages/active_track_loading.dart';
 
 class SideBar extends StatelessWidget {
   const SideBar({super.key});
@@ -10,33 +9,21 @@ class SideBar extends StatelessWidget {
       child: ListView(
         children: [
           UserAccountsDrawerHeader(
-            accountName: Container(
-              padding: const EdgeInsets.all(4.0),
+            currentAccountPicture: Container(
               decoration: BoxDecoration(
-                  color: Colors.grey[700],
-                  borderRadius: BorderRadius.circular(2),
+                color: Theme.of(context).colorScheme.secondary,
+                shape: BoxShape.circle
               ),
-              child: Text(
-                'Naresh'.toUpperCase(),
-                style: TextStyle(
-                  color: Colors.grey[100],
-                  height: 1.5,
-                  letterSpacing: 1.35,
-                  fontWeight: FontWeight.bold,
-                ),),
+              child: const Icon(
+                Icons.account_circle,
+                semanticLabel: 'Hello',
+              ),
+            ),
+            accountName: Text(
+              'Naresh'.toUpperCase(),
+              style: Theme.of(context).textTheme.titleMedium,
             ),
             accountEmail: const Text(''),
-            currentAccountPicture: const CircleAvatar(
-              child: ClipOval(
-                child: Icon(Icons.account_circle),
-              ),
-            ),
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.fill,
-                image: AssetImage('assets/images/side_bar_background.jpg')
-              )
-            ),
           ),
           ListTile(
             title: const Text('Active Track'),
@@ -56,7 +43,6 @@ class SideBar extends StatelessWidget {
           ),
         ],
       ),
-
     );
   }
 }

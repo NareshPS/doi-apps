@@ -32,8 +32,14 @@ const TrackSchema = CollectionSchema(
       name: r'name',
       type: IsarType.string,
     ),
-    r'timestamps': PropertySchema(
+    r'status': PropertySchema(
       id: 3,
+      name: r'status',
+      type: IsarType.byte,
+      enumMap: _TrackstatusEnumValueMap,
+    ),
+    r'timestamps': PropertySchema(
+      id: 4,
       name: r'timestamps',
       type: IsarType.doubleList,
     )
@@ -79,7 +85,8 @@ void _trackSerialize(
   writer.writeDoubleList(offsets[0], object.latitudes);
   writer.writeDoubleList(offsets[1], object.longitudes);
   writer.writeString(offsets[2], object.name);
-  writer.writeDoubleList(offsets[3], object.timestamps);
+  writer.writeByte(offsets[3], object.status.index);
+  writer.writeDoubleList(offsets[4], object.timestamps);
 }
 
 Track _trackDeserialize(
@@ -90,11 +97,13 @@ Track _trackDeserialize(
 ) {
   final object = Track(
     name: reader.readStringOrNull(offsets[2]),
+    status: _TrackstatusValueEnumMap[reader.readByteOrNull(offsets[3])] ??
+        TrackStatus.ready,
   );
   object.id = id;
   object.latitudes = reader.readDoubleList(offsets[0]) ?? [];
   object.longitudes = reader.readDoubleList(offsets[1]) ?? [];
-  object.timestamps = reader.readDoubleList(offsets[3]) ?? [];
+  object.timestamps = reader.readDoubleList(offsets[4]) ?? [];
   return object;
 }
 
@@ -112,11 +121,27 @@ P _trackDeserializeProp<P>(
     case 2:
       return (reader.readStringOrNull(offset)) as P;
     case 3:
+      return (_TrackstatusValueEnumMap[reader.readByteOrNull(offset)] ??
+          TrackStatus.ready) as P;
+    case 4:
       return (reader.readDoubleList(offset) ?? []) as P;
     default:
       throw IsarError('Unknown property with id $propertyId');
   }
 }
+
+const _TrackstatusEnumValueMap = {
+  'ready': 0,
+  'inProgress': 1,
+  'paused': 2,
+  'concluded': 3,
+};
+const _TrackstatusValueEnumMap = {
+  0: TrackStatus.ready,
+  1: TrackStatus.inProgress,
+  2: TrackStatus.paused,
+  3: TrackStatus.concluded,
+};
 
 Id _trackGetId(Track object) {
   return object.id;
@@ -695,6 +720,59 @@ extension TrackQueryFilter on QueryBuilder<Track, Track, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Track, Track, QAfterFilterCondition> statusEqualTo(
+      TrackStatus value) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'status',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<Track, Track, QAfterFilterCondition> statusGreaterThan(
+    TrackStatus value, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'status',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<Track, Track, QAfterFilterCondition> statusLessThan(
+    TrackStatus value, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'status',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<Track, Track, QAfterFilterCondition> statusBetween(
+    TrackStatus lower,
+    TrackStatus upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'status',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+      ));
+    });
+  }
+
   QueryBuilder<Track, Track, QAfterFilterCondition> timestampsElementEqualTo(
     double value, {
     double epsilon = Query.epsilon,
@@ -859,6 +937,18 @@ extension TrackQuerySortBy on QueryBuilder<Track, Track, QSortBy> {
       return query.addSortBy(r'name', Sort.desc);
     });
   }
+
+  QueryBuilder<Track, Track, QAfterSortBy> sortByStatus() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'status', Sort.asc);
+    });
+  }
+
+  QueryBuilder<Track, Track, QAfterSortBy> sortByStatusDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'status', Sort.desc);
+    });
+  }
 }
 
 extension TrackQuerySortThenBy on QueryBuilder<Track, Track, QSortThenBy> {
@@ -885,6 +975,18 @@ extension TrackQuerySortThenBy on QueryBuilder<Track, Track, QSortThenBy> {
       return query.addSortBy(r'name', Sort.desc);
     });
   }
+
+  QueryBuilder<Track, Track, QAfterSortBy> thenByStatus() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'status', Sort.asc);
+    });
+  }
+
+  QueryBuilder<Track, Track, QAfterSortBy> thenByStatusDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'status', Sort.desc);
+    });
+  }
 }
 
 extension TrackQueryWhereDistinct on QueryBuilder<Track, Track, QDistinct> {
@@ -904,6 +1006,12 @@ extension TrackQueryWhereDistinct on QueryBuilder<Track, Track, QDistinct> {
       {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'name', caseSensitive: caseSensitive);
+    });
+  }
+
+  QueryBuilder<Track, Track, QDistinct> distinctByStatus() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'status');
     });
   }
 
@@ -936,6 +1044,12 @@ extension TrackQueryProperty on QueryBuilder<Track, Track, QQueryProperty> {
   QueryBuilder<Track, String?, QQueryOperations> nameProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'name');
+    });
+  }
+
+  QueryBuilder<Track, TrackStatus, QQueryOperations> statusProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'status');
     });
   }
 

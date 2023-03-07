@@ -1,70 +1,48 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:isar/isar.dart';
+import 'package:logger/logger.dart';
 import 'package:path_in_the_woods/models/track.dart';
-import 'package:path_in_the_woods/pages/active_track.dart';
-import 'package:path_in_the_woods/pages/active_track_loading.dart';
-import 'package:path_in_the_woods/pages/track_list.dart';
-import 'package:path_in_the_woods/pages/side_bar.dart';
+import 'package:path_in_the_woods/pages/home.dart';
 import 'package:path_in_the_woods/services/location_service.dart';
+import 'package:path_in_the_woods/services/track_service.dart';
+import 'package:path_in_the_woods/themes.dart';
 
 LocationService locationService = LocationService(
-  radius: 20,
-  interval: const Duration(seconds: 30),
+  // interval: const Duration(seconds: 30),
   notificationText: "Click to see the details.",
   notificationTitle: "Recording Track",
 );
 
+final logger = Logger(
+  printer: PrettyPrinter(),
+);
+
 void main() async {
   final Isar isar = await Isar.open([TrackSchema]);
+  TrackService trackService = TrackService(db: isar);
+  await trackService.initialize();
 
-  // Ensure that there is at least one track in the database.
-  if (isar.tracks.countSync() == 0) {
-    isar.writeTxnSync(() => isar.tracks.putSync(Track(name: '(current)')));
-  }
-
-  runApp(MaterialApp(
-    routes: {
-      '/': (context) => const Home(),
-      '/active_track_loading': (context) => ActiveTrackLoading(
-        db: isar,
-        location: locationService
-      ),
-      '/active_track': (context) => ActiveTrack(
-        db: isar,
-        location: locationService
-      ),
-      '/track_list': ((context) => TrackList(db: isar)),
-    },
-  ));
-}
-
-class Home extends StatelessWidget {
-  const Home({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey[400],
-      appBar: AppBar(
-        title: const Text('Home'),
-        centerTitle: true,
-        backgroundColor: Colors.green[700],
-      ),
-      drawer: const SideBar(),
-      body: Container(
-        color: Colors.white,
-        child: Center(
-          child: ElevatedButton(
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.green[700])
-            ),
-            onPressed: () {
-              Navigator.pushNamed(context, '/active_track_loading');
-            },
-            child: const Text('Active Track')
+  runApp(
+    AdaptiveTheme(
+      light: Themes.lightTheme,
+      dark: Themes.darkTheme,
+      initial: AdaptiveThemeMode.light,
+      builder: (light, dark) => MaterialApp(
+        theme: light,
+        darkTheme: dark,
+        builder: EasyLoading.init(),
+        initialRoute: '/home',
+        routes: {
+          '/home': (context) => Home(
+            db: isar,
+            location: locationService,
+            trackService: trackService,
+            logger: logger
           ),
-        ),
+        },
       ),
-    );
-  }
+    )
+  );
 }

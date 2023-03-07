@@ -11,8 +11,8 @@ class TrackList extends StatelessWidget {
 
   Future<List<Track>> trackPod() async {
     final tracks = db.tracks;
-    
-    return tracks.where().findAll();
+    // TODO: Get DB changes.
+    return tracks.filter().not().statusEqualTo(TrackStatus.ready).findAll();
   }
 
   @override
@@ -21,14 +21,7 @@ class TrackList extends StatelessWidget {
       initialData: const [],
       create: (context) => trackPod(),
       catchError: (context, error) => throw Exception(Text(error.toString())),
-      child: Scaffold(
-        backgroundColor: Colors.grey[400],
-        appBar: AppBar(
-          title: const Text('My Tracks'),
-          centerTitle: true,
-          backgroundColor: Colors.green[700],
-        ),
-        body: Consumer<List<Track>>(
+      child: Consumer<List<Track>>(
           builder: (context, tracks, child) {
             return ListView.builder(
               itemCount: tracks.length,
@@ -46,7 +39,6 @@ class TrackList extends StatelessWidget {
             );
           },
         )
-      ),
-    );
+      );
   }
 }
