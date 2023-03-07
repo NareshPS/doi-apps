@@ -1,6 +1,8 @@
 import 'dart:async';
 
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:background_service_app/services/location_service.dart';
+import 'package:background_service_app/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:intl/intl.dart';
@@ -17,12 +19,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return AdaptiveTheme(
+      light: CustomTheme.lightTheme,
+      dark: CustomTheme.darkTheme,
+      initial: AdaptiveThemeMode.light,
+      builder: (theme, darkTheme) => MaterialApp(
+        title: 'Flutter Demo',
+        theme: theme,
+        darkTheme: darkTheme,
+        home: const MyHomePage(title: 'Flutter Demo Home Page'),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -70,6 +76,13 @@ class _MyHomePageState extends State<MyHomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        actions: [
+          IconButton(
+            onPressed: AdaptiveTheme.of(context).toggleThemeMode,
+            icon: const Icon(Icons.brightness_4_rounded),
+            color: Theme.of(context).colorScheme.inversePrimary,
+          )
+        ],
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -87,6 +100,10 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         )
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => {},
+        child: const Icon(Icons.add),
+      ),
     );
     // );
   }
@@ -97,55 +114,3 @@ class _MyHomePageState extends State<MyHomePage> {
     super.dispose();
   }
 }
-
-// void startTracking(callback) async {
-//   bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
-
-//   print('Enabled: $serviceEnabled');
-
-//   if (serviceEnabled) {
-//     LocationPermission p = await Geolocator.checkPermission();
-
-//     print('Permissions: ${p.name}');
-
-//     if (isPermissionDenied(p)) {
-//       p = await Geolocator.requestPermission();
-//       if (isPermissionDenied(p)) {
-//         print('Location tracking permission denied');
-//       } else {
-//         startListening(callback);
-//       }
-//     } else {
-//       print('Start listening...');
-//         startListening(callback);
-//     }
-//   }
-// }
-
-// startListening(recorder) async {
-//   final settings = AndroidSettings(
-//     accuracy: LocationAccuracy.high,
-//     distanceFilter: 20,
-//     forceLocationManager: false,
-//     intervalDuration: const Duration(seconds: 30),
-//     // (Optional) Set foreground notification config to keep the app alive 
-//     // when going to the background
-//     foregroundNotificationConfig: const ForegroundNotificationConfig(
-//         notificationText:
-//         "Click to see track details.",
-//         notificationTitle: "Recording the current track",
-//         enableWakeLock: true,
-//     )
-//   );
-
-//   return Geolocator.getPositionStream(locationSettings: settings).listen(recorder);
-// }
-
-// bool isPermissionDenied(p) {
-//   if ((p == LocationPermission.denied)|| (p == LocationPermission.deniedForever)) {
-//     return true;
-//   }
-//   else {
-//     return false;
-//   }
-// }
