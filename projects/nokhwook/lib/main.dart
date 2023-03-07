@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 import 'package:nokhwook/pages/home.dart';
-import 'package:nokhwook/pages/loading.dart';
-import 'package:nokhwook/services/navigation_service.dart';
+import 'package:nokhwook/services/notification_service.dart';
 
-Future<void> main () async {
+final logger = Logger(printer: PrettyPrinter(methodCount: 5));
+
+Future<void> main() async {
+  final notificationService = NotificationService();
+
   WidgetsFlutterBinding.ensureInitialized();
 
-  runApp(
-    MaterialApp(
-      navigatorKey: NavigationService.navigatorKey,
-      // home: Stage(),
-      routes: {
-        '/': (context) => Loading(notificationService: notificationService),
-        '/home': ((context) => Home(notificationService: notificationService)),
-      },
-    )
-  );
+  runApp(MaterialApp(
+    routes: {
+      '/': (context) => Home(notificationService: notificationService),
+    },
+  ));
 }

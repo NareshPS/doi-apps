@@ -1,67 +1,74 @@
 import 'dart:convert';
 
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:nokhwook/utils/word.dart';
 
-enum EngagementType {
-  dailyWord,
-  weeklyWord
-}
+enum NotificationCategory { dailyWord, weeklyWord, everyMinuteWord }
 
 class NotificationService {
   final plugin = FlutterLocalNotificationsPlugin();
 
+  Future<NotificationAppLaunchDetails?> get details async =>
+      plugin.getNotificationAppLaunchDetails();
+
   Future<bool?> initialize(onReceive) async {
     const notificationInitializationSettings = InitializationSettings(
-      android: AndroidInitializationSettings(
-        '@mipmap/ic_launcher_round'
-      )
-    );
+        android: AndroidInitializationSettings('@mipmap/ic_launcher_round'));
 
     return plugin.initialize(
-      notificationInitializationSettings, 
+      notificationInitializationSettings,
       onDidReceiveNotificationResponse: onReceive,
     );
   }
 
-  scheduleWordReminder(EngagementType type, int wordId, Word<WordItem> w, RepeatInterval freq) {
-    final title = 'Today\'s ${w.header.lang} Word: ${w.header.phrase}';
-    final body = '${w.header.phrase} in ${w.items[0].lang} means ${w.items[0].phrase}';
-
-    const details = NotificationDetails(
-      android: AndroidNotificationDetails(
-        'daily_word', 'Daily Word',
-        channelDescription: 'Daily word notifications',
-        category: AndroidNotificationCategory.reminder,
-      )
-    );
-
-    plugin.periodicallyShow(
-      type.index, title, body, freq,
-      details, androidAllowWhileIdle: true,
-      payload: jsonEncode({
-        'wordId': wordId
-      })
-    );
+  androidNotificationDetails(NotificationCategory category) {
+    switch (category) {
+      case NotificationCategory.dailyWord:
+        return const AndroidNotificationDetails(
+          'daily_word',
+          'Daily Word',
+          channelDescription: 'Daily word reminder',
+          category: AndroidNotificationCategory.reminder,
+        );
+      case NotificationCategory.weeklyWord:
+        return const AndroidNotificationDetails(
+          'weekly_word',
+          'Weekly Word',
+          channelDescription: 'Weekly word reminder',
+          category: AndroidNotificationCategory.reminder,
+        );
+      case NotificationCategory.everyMinuteWord:
+        return const AndroidNotificationDetails(
+          'minute_word',
+          'Minute Word',
+          channelDescription: 'Minute word reminder for testing purposes',
+          category: AndroidNotificationCategory.reminder,
+        );
+    }
   }
 
-  cancelSchedule(EngagementType type) {
-    plugin.cancel(type.index);
+  scheduleWordReminder(NotificationCategory category, int wordId, String title,
+      String desc, RepeatInterval freq) async {
+    final details =
+        NotificationDetails(android: androidNotificationDetails(category));
+
+    // Cancel existing reminder and schedule a new one.
+    plugin.cancel(category.index).then((value) => plugin.periodicallyShow(
+        category.index, title, desc, freq, details,
+        androidAllowWhileIdle: true, payload: jsonEncode({'wordId': wordId})));
   }
 
-  scheduleWordReminders(int wordId, Word<WordItem> w) async {
-    // scheduleWordReminder(EngagementType.dailyWord, wordId, w, RepeatInterval.everyMinute);
-    scheduleWordReminder(EngagementType.dailyWord, wordId, w, RepeatInterval.daily);
-    scheduleWordReminder(EngagementType.weeklyWord, wordId, w, RepeatInterval.weekly);
+  Future scheduleDailyWord(int wordId, String title, String desc) async {
+    scheduleWordReminder(NotificationCategory.dailyWord, wordId, title, desc,
+        RepeatInterval.daily);
   }
 
-  cancelWordReminders() {
-    cancelSchedule(EngagementType.dailyWord);
-    cancelSchedule(EngagementType.weeklyWord);
+  Future scheduleWeeklyWord(int wordId, String title, String desc) async {
+    scheduleWordReminder(NotificationCategory.dailyWord, wordId, title, desc,
+        RepeatInterval.weekly);
   }
 
-  rescheduleWordReminders(int wordId, Word<WordItem> w) async {
-    await cancelWordReminders();
-    await scheduleWordReminders(wordId, w);
+  Future scheduleEveryMinuteWord(int wordId, String title, String desc) async {
+    scheduleWordReminder(NotificationCategory.everyMinuteWord, wordId, title,
+        desc, RepeatInterval.everyMinute);
   }
 }
