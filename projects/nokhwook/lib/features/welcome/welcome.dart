@@ -1,48 +1,79 @@
 import 'package:flutter/material.dart';
-import 'package:nokhwook/components/word_board.dart';
+import 'package:nokhwook/components/word_grid.dart';
+import 'package:nokhwook/features/engagement/word_reminder.dart';
+import 'package:nokhwook/features/stages/word_stage.dart';
+import 'package:nokhwook/features/welcome/memorized_subset.dart';
+import 'package:nokhwook/main.dart';
 import 'package:nokhwook/models/vocab.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:provider/provider.dart';
 
-class Welcome extends StatelessWidget {
-  final Vocab vocab;
+class Welcome extends StatefulWidget {
+  const Welcome({super.key});
 
-  const Welcome({super.key, required this.vocab});
+  @override
+  State<Welcome> createState() => _WelcomeState();
+}
+
+class _WelcomeState extends State<Welcome> {
+  final errors = <String>[];
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-        future: SharedPreferences.getInstance(),
-        builder: (context, storeSnapshot) {
-          List<int> subset = [];
+    final vocab = context.watch<Vocab>();
+    final memorizedSubset = context.watch<MemorizedSubset>();
+    final reminderMessage = context.watch<WordReminderMessage?>();
+    final errorMessage = context.watch<String?>();
 
-          if (storeSnapshot.hasData) {
-            subset =
-                (storeSnapshot.data?.getStringList('memorized') ?? <String>[])
-                    .toSet()
-                    .map(int.parse)
-                    .toList();
-          }
+    if (errorMessage != null) errors.add(errorMessage);
 
-          return Column(
-            children: [
-              Text('You have learnt ${subset.length} words'),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: subset.length,
-                    itemBuilder: (context, index) => Card(
-          elevation: 2.0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
+    logger.i(
+        'Memorized Subset: ${memorizedSubset.subset} Reminder: ${reminderMessage?.wordId}');
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.secondary,
+                borderRadius: BorderRadius.circular(4.0)),
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: errors
+                  .map((e) => Text(
+                        e,
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineSmall!
+                            .copyWith(
+                                color:
+                                    Theme.of(context).colorScheme.onSecondary),
+                      ))
+                  .toList(),
+            ),
           ),
-          margin: const EdgeInsets.all(10.0),
-          color: Colors.grey[300],
-          child: WordBoard(
-                        word: vocab[index],
-                        memorize: () => {},
-                        header: vocab.header)),
-              )),
-            ],
-          );
-        });
+        ),
+        reminderMessage?.wordId != null
+            ? WordStage(
+                vocab: vocab,
+                wordId: reminderMessage?.wordId,
+              )
+            : const Text(''),
+        Padding(
+          padding: const EdgeInsets.only(top: 8.0),
+          child: Text(
+            'You have learnt ${memorizedSubset.subset.length} words!',
+            style: Theme.of(context).textTheme.headlineSmall,
+          ),
+        ),
+        if (memorizedSubset.subset.isNotEmpty)
+          WordGrid(
+              title: 'Memorized Words',
+              vocab: vocab,
+              subset: memorizedSubset.subset),
+      ],
+    );
   }
 }

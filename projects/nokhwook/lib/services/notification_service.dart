@@ -63,7 +63,7 @@ class NotificationService {
   }
 
   Future scheduleWeeklyWord(int wordId, String title, String desc) async {
-    scheduleWordReminder(NotificationCategory.dailyWord, wordId, title, desc,
+    scheduleWordReminder(NotificationCategory.weeklyWord, wordId, title, desc,
         RepeatInterval.weekly);
   }
 

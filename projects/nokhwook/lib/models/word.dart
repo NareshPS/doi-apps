@@ -9,7 +9,6 @@ class WordItem {
 }
 
 class Word {
-  // WordItem header;
   List<WordItem> items;
 
   Word({required this.items});

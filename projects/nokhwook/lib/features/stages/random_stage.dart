@@ -1,33 +1,38 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:nokhwook/features/stages/random_stage_preferences.dart';
 import 'package:nokhwook/features/stages/stage.dart';
+import 'package:nokhwook/main.dart';
 import 'package:nokhwook/models/vocab.dart';
+import 'package:provider/provider.dart';
 
 class RandomStage extends StatefulWidget {
-  final Vocab vocab;
-
-  const RandomStage({super.key, required this.vocab});
+  const RandomStage({super.key});
 
   @override
   State<RandomStage> createState() => _RandomStageState();
 }
 
-class _RandomStageState extends State<RandomStage> {
-  final int numItems = 20;
-  late List<int> subset;
+class _RandomStageState extends State<RandomStage>
+    with AutomaticKeepAliveClientMixin {
+  final stageKey = const Key('randomStage');
 
   @override
-  void initState() {
-    final random = Random();
-    subset = Iterable<int>.generate(
-        numItems, (x) => random.nextInt(widget.vocab.length)).toList();
-    subset.shuffle(random);
-    super.initState();
-  }
+  bool get wantKeepAlive => true;
 
   @override
   Widget build(BuildContext context) {
-    return Stage(vocab: widget.vocab, title: 'Random Words', subset: subset);
+    super.build(context);
+
+    Random random = Random();
+    final vocab = context.watch<Vocab>();
+    final prefs = context.watch<RandomStagePreferences>();
+    final subset = Iterable.generate(prefs.sampleSize)
+        .map((_) => random.nextInt(vocab.length))
+        .toList();
+    logger.i('Subset: $subset PlaySpeed: ${prefs.playSpeed}');
+    return Stage(
+        title: 'Random Cards', subset: subset, playSpeed: prefs.playSpeed);
   }
 }

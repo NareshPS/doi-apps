@@ -8,29 +8,40 @@ import 'package:nokhwook/models/vocab.dart';
 import 'package:nokhwook/services/notification_service.dart';
 import 'package:nokhwook/models/word.dart';
 
-class WordReminder {
-  // static bool firstLaunch = true;
+class WordReminderMessage {
+  final int? wordId;
 
+  WordReminderMessage({required this.wordId});
+}
+
+class WordReminder {
   final NotificationService notificationService;
-  final reminders = StreamController<int>();
+  static final messageController = StreamController<WordReminderMessage>();
 
   WordReminder({required this.notificationService});
 
   Future<void> initialize(words) async {
     await notificationService.initialize(onNotificationReceive);
+
     schedule(words);
 
     logger.i('WordReminder: initialize');
-    await notificationService.details.then((details) {
+    notificationService.details.then((details) {
+      WordReminderMessage message;
       if (details != null &&
           details.didNotificationLaunchApp &&
           details.notificationResponse!.payload != null) {
-        logger.i('launched from notification');
         final payload =
             jsonDecode(details.notificationResponse!.payload ?? '{}');
 
-        reminders.add(payload['wordId']);
+        errorController.add('WordReminder: Initialization through reminder');
+        message = WordReminderMessage(wordId: payload['wordId']);
+      } else {
+        message = WordReminderMessage(wordId: null);
       }
+      messageController.add(message);
+
+      logger.i(details?.didNotificationLaunchApp);
     });
   }
 
@@ -40,20 +51,22 @@ class WordReminder {
     final dailyWordId = random.nextInt(words.length);
     final weeklyWordId = random.nextInt(words.length);
 
-    // notificationService
-    //     .scheduleDailyWord(
-    //         dailyWordId,
-    //         wordReminderTitle('Daily', words[dailyWordId]),
-    //         wordReminderDesc(words[dailyWordId]))
-    //     .then((_) => notificationService.scheduleWeeklyWord(
-    //         weeklyWordId,
-    //         wordReminderTitle('Weekly', words[weeklyWordId]),
-    //         wordReminderDesc(words[weeklyWordId])));
+    notificationService
+        .scheduleDailyWord(
+            dailyWordId,
+            wordReminderTitle('Daily', words.header, words[dailyWordId]),
+            wordReminderDesc(words.header, words[dailyWordId]))
+        .then((_) => notificationService.scheduleWeeklyWord(
+            weeklyWordId,
+            wordReminderTitle('Weekly', words.header, words[weeklyWordId]),
+            wordReminderDesc(words.header, words[weeklyWordId])));
 
-    notificationService.scheduleEveryMinuteWord(
-        dailyWordId,
-        wordReminderTitle('Daily', words.header, words[dailyWordId]),
-        wordReminderDesc(words.header, words[dailyWordId]));
+    // notificationService.scheduleEveryMinuteWord(
+    //     dailyWordId,
+    //     wordReminderTitle('Daily', words.header, words[dailyWordId]),
+    //     wordReminderDesc(words.header, words[dailyWordId]));
+
+    errorController.add('WordReminder: Scheduling reminder');
   }
 
   wordReminderTitle(String prefix, List<String> header, Word w) =>
@@ -61,40 +74,13 @@ class WordReminder {
   wordReminderDesc(List<String> header, Word w) =>
       'In ${header[1]} language, it means ${w[1].phrase}';
 
-  onNotificationReceive(NotificationResponse details) {
+  @pragma('vm:entry-point')
+  static onNotificationReceive(NotificationResponse details) {
     final payload = jsonDecode(details.payload ?? '{}');
     logger.i('Received notification: ${details.payload}');
 
-    reminders.add(payload['wordId']);
-    // reminders.stream
+    errorController.add('WordReminder: Notification received');
 
-    // Navigator.of(NavigationService.navigatorKey.currentContext!)
-    //     .pushNamed('/home', arguments: {
-    //   'start': payload['wordId'],
-    // });
+    messageController.add(WordReminderMessage(wordId: payload['wordId']));
   }
-
-  // Future<int?> wordId() {
-  //   // If this is the first time we arrived at this page,
-  //   // check if the arrival is caused by a click on a notification.
-  //   // Unfortunately, the notification launch state persists throughout
-  //   // the app session. The firstLaunch variable ensures that
-  //   // we handle the notification payload only as a response
-  //   // to notification click.
-  //   if (firstLaunch) {
-  //     firstLaunch = false;
-  //     return notificationService.details.then((details) {
-  //       if (details != null &&
-  //           details.didNotificationLaunchApp &&
-  //           details.notificationResponse!.payload != null) {
-  //         final payload =
-  //             jsonDecode(details.notificationResponse!.payload ?? '{}');
-
-  //         return payload['wordId'];
-  //       }
-  //       return null;
-  //     });
-  //   }
-  //   return Future.value(null);
-  // }
 }

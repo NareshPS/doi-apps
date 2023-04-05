@@ -43,6 +43,15 @@ dependencies:
   provider: ^6.0.5
   flutter_local_notifications: ^13.0.0
   logger: ^1.2.2
+  tuple: ^2.0.1
+  settings_ui: ^2.0.2
+  visibility_detector: ^0.4.0+2
+  quiver: ^3.2.1
+  responsive_grid: ^2.1.0
+  card_swiper: ^2.0.4
+  swipable_stack: ^2.0.0
+  adaptive_theme: ^3.2.0
+  subtitle_wrapper_package: ^2.1.1
 
 dev_dependencies:
   flutter_test:
@@ -72,6 +81,7 @@ flutter:
   assets:
     - assets/vocab.csv
     - assets/images/
+    - assets/subtitles/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -1,15 +1,19 @@
 import 'dart:async';
 
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:background_service_app/features/swiper/local_swiper.dart';
 import 'package:background_service_app/services/location_service.dart';
 import 'package:background_service_app/themes.dart';
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:intl/intl.dart';
 
+// import 'features/swiper/swiper.dart';
+
 void main() {
   // LocationTask.initialize();
-  
+
   runApp(const MyApp());
 }
 
@@ -70,42 +74,21 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // return WithForegroundTask(
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-        actions: [
-          IconButton(
-            onPressed: AdaptiveTheme.of(context).toggleThemeMode,
-            icon: const Icon(Icons.brightness_4_rounded),
-            color: Theme.of(context).colorScheme.inversePrimary,
-          )
-        ],
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: ListView.builder(
-          itemCount: trackPoints.length,
-          itemBuilder: (context, index) => Text(
-            '${trackPoints[index].latitude}, '
-            '${trackPoints[index].longitude}, '
-            '${dateFormat.format(
-              DateTime.fromMillisecondsSinceEpoch(
-                trackPoints[index].timestamp!.millisecondsSinceEpoch
-              )
-            )}'
-          )
-        )
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => {},
-        child: const Icon(Icons.add),
-      ),
+      appBar: AppBar(),
+      body: Column(children: [
+        Text('Hello'),
+        Expanded(
+          child: Container(
+            child: const LocalSwiper(),
+          ),
+        ),
+        Expanded(child: Text(''))
+      ]),
+      //   body: const SubtitleWidget(
+      //       path:
+      //           'assets/subtitles/captain.america.the.first.avenger.2011.en.srt'),
     );
-    // );
   }
 
   @override
