@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:background_service_app/features/subtitles/subtitle_widget.dart';
 import 'package:background_service_app/features/swiper/local_swiper.dart';
 import 'package:background_service_app/services/location_service.dart';
 import 'package:background_service_app/themes.dart';
@@ -79,11 +80,9 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(children: [
         Text('Hello'),
         Expanded(
-          child: Container(
-            child: const LocalSwiper(),
-          ),
+          child: const SubtitleWidget(),
         ),
-        Expanded(child: Text(''))
+        // Expanded(child: Text(''))
       ]),
       //   body: const SubtitleWidget(
       //       path:

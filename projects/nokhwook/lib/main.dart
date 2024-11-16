@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:csv/csv.dart';
-import 'package:csv/csv_settings_autodetection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -39,8 +38,10 @@ initializeNotifications(vocab) async {
 
 Future<SubtitlesService> loadSubtitles() async {
   final sources = {
-    'Thai': 'assets/subtitles/captain.america.the.first.avenger.2011.th.srt',
-    'English': 'assets/subtitles/captain.america.the.first.avenger.2011.en.srt',
+    'Thai': 'assets/subtitles/the.expanse.s06e06.babylons.ashes.th.srt',
+    'English': 'assets/subtitles/the.expanse.s06e06.babylons.ashes.en.srt',
+    // 'Thai': 'assets/subtitles/captain.america.the.first.avenger.2011.th.srt',
+    // 'English': 'assets/subtitles/captain.america.the.first.avenger.2011.en.srt',
   };
   final service = SubtitlesService(sources: sources);
   await service.load();

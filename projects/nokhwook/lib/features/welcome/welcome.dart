@@ -28,9 +28,10 @@ class _WelcomeState extends State<Welcome> {
 
     logger.i(
         'Memorized Subset: ${memorizedSubset.subset} Reminder: ${reminderMessage?.wordId}');
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
+    // return Column(
+    return ListView(
+      // mainAxisAlignment: MainAxisAlignment.start,
+      // mainAxisSize: MainAxisSize.min,
       children: [
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -61,18 +62,22 @@ class _WelcomeState extends State<Welcome> {
                 wordId: reminderMessage?.wordId,
               )
             : const Text(''),
-        Padding(
-          padding: const EdgeInsets.only(top: 8.0),
-          child: Text(
-            'You have learnt ${memorizedSubset.subset.length} words!',
-            style: Theme.of(context).textTheme.headlineSmall,
+        Center(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text(
+              'You have learnt ${memorizedSubset.subset.length} words!',
+              style: Theme.of(context).textTheme.headlineSmall,
+            ),
           ),
         ),
         if (memorizedSubset.subset.isNotEmpty)
-          WordGrid(
-              title: 'Memorized Words',
-              vocab: vocab,
-              subset: memorizedSubset.subset),
+          Center(
+            child: WordGrid(
+                title: 'Memorized Words',
+                vocab: vocab,
+                subset: memorizedSubset.subset),
+          ),
       ],
     );
   }

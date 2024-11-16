@@ -58,10 +58,13 @@ class _StageState extends State<Stage> {
     });
   }
 
-  Widget buildItem(index) => WordBoard(
-        header: vocab.header,
-        word: vocab[index],
-        memorize: () {},
+  Widget buildItem(index) => Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: WordBoard(
+          header: vocab.header,
+          word: vocab[index],
+          memorize: () {},
+        ),
       );
 
   @override
@@ -77,7 +80,7 @@ class _StageState extends State<Stage> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
-            flex: 3,
+            flex: 5,
             child: Card(
               elevation: 2.0,
               shape: RoundedRectangleBorder(
@@ -226,7 +229,7 @@ class _StageState extends State<Stage> {
             // ),
           ),
           if (MediaQuery.of(context).orientation == Orientation.portrait)
-            Expanded(flex: 2, child: Container()),
+            Expanded(flex: 3, child: Container()),
           if (widget.playSpeed != null)
             FixableFloatingActionButton(
               onPressed: () => autoPlaying ? stopAutoplay() : startAutoplay(),

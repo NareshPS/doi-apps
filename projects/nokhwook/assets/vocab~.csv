@@ -128,7 +128,7 @@ Thai,English
 เกาะ,island;to cling;to perch
 ปลาทู,mackerel
 ป่วย,sick
-บาน,to blossom;a classifier for doors
+บาน,to blossom
 ประธาน,primary
 กรรม,duty;action
 ซ่อม,to repair
@@ -289,6 +289,7 @@ Thai,English
 เสื้อคอปก,turtle neck shirt
 เสื้อผ้าฝ้าย,cotton shirt
 เสื้อไหม,silk shirt
+เสื้อดิบ,
 เสื้อเชิ้ต,shirt
 เพชร,diamond
 ยาง,rubber
@@ -303,7 +304,7 @@ Thai,English
 คอยตรวจ,keep checking
 ทา,paint
 ผมม้า,hair bangs
-ประเด็น,gist;main subject
+ประเด็น,gist
 พร่ำ,insist
 ปู่,paternal grandfather
 ย่า,paternal grandmother
@@ -520,7 +521,7 @@ Thai,English
 ประหลาดใจ,to be amazed in wonder
 คาดหวัง,to expect
 มัว,cloudy;a prefix for a verb to indicate being absorbed in that action.
-เหลือบ,side eye but looking for a longer duration
+เหลือบ,to glance upwards or sideways
 แขน,arms
 กางแขน,open arms
 กอดอก,crossed arms
@@ -622,7 +623,7 @@ Thai,English
 สิ้นเรื่อง,end of story (a phrase)
 เอร็ดอร่อย,delicious
 โด่งดัง,to be famous
-ประเมิน,to estimate;to rate
+ประเมิน,to estimate
 ไม่ใช่ความเป็นไปได้,it's not a possibility.
 รุ่ง,Dawn
 พลุ,fireworks
@@ -635,7 +636,7 @@ Thai,English
 สาดเสียเทเสีย,to yell at someone;to criticize harshly
 ผสมปนเป,to confuse; to puzzle
 เอ่ย,to begin to speak
-ลังเล,to hesitate;to be confused between choices
+ลังเล,to hesitate
 เปล่งเสียง,to sound
 บทสรุป,conclusion
 รุ่นคุณปู่คุณย่า,the generation of grandparents
@@ -825,7 +826,7 @@ Thai,English
 สิ่ว,chisel
 ชะมัด,extremely;terribly;awfully
 สยอง,to be terrified
-ไร้เดียงสา,to be senseless
+ไร้เดียงสา,to be unaware or have no sense of the surroundings
 เดียงสา,to be sensible
 เร่งเร้า,to urge;to push
 เปล่งประกาย,to radiate and shine (like shining eyes)
@@ -965,9 +966,10 @@ Thai,English
 ขี้โม้,boastful
 เอะอะ,boisterous;noisy
 ฉายา,nickname
+รก,cluttered
 รัว,involuntarily
 คร่ำครึ,old-fashioned
-หมก,to bury;to stuff in (like staying in a room all day)
+หมก,to bury
 สำราญ,to be good-humoured;to be happy
 พอเหมาะพอควร,appropriately;suitably
 เลิศ,excellent;wonderful;magnificent
@@ -1338,7 +1340,7 @@ Thai,English
 ลูกเห็บ,hail
 ลม,wind
 แรง,strong
-ไม่มั่นคง,insecure
+ไม่มั่นคง,
 พลิกตัว,to roll over the body
 ลูบคลำ,to move hands over the body to feel;to fondle;to grope
 อับชื้น,damp;danky;smell (like in a old hotel room)
@@ -1429,7 +1431,7 @@ Thai,English
 หมอย,pubic hairs
 ขน,body hairs
 อ้วก,to puke
-ขัน,to sound (for animals);to crow;a bowl
+ขัน,to sound (for animals); to crow; to coo
 นกเขาไม่ขัน,unable to get an erection
 พื้น,floor
 ดึง,to pull
@@ -1555,7 +1557,7 @@ Thai,English
 วน,to go around in a loop
 ต้น,stem;trunk
 ค้น,to seek;to search
-ชม,to watch (a view);to admire
+ชม,to watch (a view)
 โกน,to shave
 โดน,it converts a sentence to passive voice
 ปล้น,to threaten
@@ -1635,7 +1637,7 @@ Thai,English
 ตอบ,to reply
 ถอนฟัน,to extract a tooth
 เลอะเทอะ,to be messy;to be sloppy
-เยอะ,many (countable)
+เยอะ,a lot
 เจอ,to meet
 เธอ,you
 เบอร์,number
@@ -2005,249 +2007,3 @@ Thai,English
 ฟ้า,sky blue
 น้ำเงิน,navy blue
 กล้าหาญ,brave
-วุ่นวาย,chaotic (a noisy or crowded setting)
-คลุมโปง,to get in the blanket completely with face covered
-สโพก,hips
-ก้น,ass
-ดึงดูดใจ,attractive
-เปราะ (จิตใจเปราะบาง),brittle
-ร้าว (จอร้าว),to crack
-รก (ห้องรก),cluttered
-เรียบรอย,organized
-สีสน หลากสี,colorful
-หลากหลาย,with a lot of variety
-กล้า,to dare
-มืด,dark black
-สว่าง,bright
-หน้ามืด,to faint
-โพล่ง,to blurt out
-ทันใจ,to be quick
-ทันที,immediately
-รับสมัคร,to apply
-สมัครใจ,to agree (without having a choice)
-ใบสมัคร,applications
-เหมื่อน,same
-คล้าย,similar
-มาไว มาก่อน,early
-สาย ช้า,late
-เร็ว ไว,fast
-ปากไว,to talk without thinking
-มือไว,thievish
-ใจเร็ว,a girl who is easy to pick up
-อวบ,chubby
-ลงพุง,paunchy
-คะนอง,fiery (temper)
-ล้น,to be full upto the brim
-สุดท้อง,youngest child
-กิ๊ก,secret girlfriend or boyfriend
-สุขสันต์วันเกิด,happy birthday
-สงบ,peaceful
-โกรธ โมโห,to be angry
-มาก,a lot
-หลากสี หลายสี,multi-colored
-แคบ,narrow
-ใจแคบ,smug
-ความคิดคับแคบ,narrow-minded
-เก่า,old (for things)
-แก่,old (for people)
-หนุ่ม,young (people)
-สีส้ม สีแสด,orange color
-สีชมพู,pink color
-เสียใจ,sad
-เตี้ย,short
-ฉลาด,clever
-ยอดเยี่ยม,excellent;splendid
-ตรง,straight
-หยิก,to curl around
-สวดทรง,shape (of a girl)
-มวน,to roll
-ยืดยุ่น,to spring (like a spring)
-น่าเกลียด,ugly
-คว่ำ กลับหัว,upside down
-อ่อน,young
-หน้าอ่อน,to look young
-ใจอ่อน,soft-hearted;vulnerable
-ห่าม,almost ripe
-ครี้งสุกครึ้งดิบ,medium rare
-ง่ายแบบไม่สับสน,keep it simple
-อิทธิพล,to influence
-เวทมนตร์,magic
-สิ่งแวดล้อม,environment
-แซวเล่น,to tease
-ละเลย,to ignore;to neglect
-หาเรื่อง,to look for a fight
-หาหาวใส่หัว,to look for a problem
-เดี๋ยว,soon;in a bit
-ขออภัย,to apologize
-ความไว้เนื้อเชื่อใจ,to have confidence in
-ไม่ไว้ว่างใจ,to be distrustful
-ที่เชื่อถือได้,reliable
-เอื้อเพื้อเผื้อแผ่,hospitable;accomodating
-เอื้ออารี,to do a favor
-เอื้ออาทร,to help eachother
-ชั่วร้าย,to be evil
-เลวร้าย,to be bad
-โทดร้าย,to be cruel
-สิ้นหวัง,to be hopeless
-สิ้นเชิง,completely;entirely
-นายกเทศมนตรี,mayor
-ประชาธิปไตย,democracy
-การนิรโทษกรรม,amnesty
-อาชญากร,criminal
-ดาษดื่น,to bloom;to be ubiquitous or commonplace
-ฟูมฟาย,tearfully;lavishly
-ชำเลือง,side eye without worrying about someone looking back
-เหลียว,to turn the upper body to see behind
-หมู่ หลุ่ม,a group
-ฝูง,a group of animals
-กอ,a group of bamboo plants
-พุ่ม,a bunch of trees
-กอง,a pile
-พับ,to fold
-ปรานี,to have mercy on
-ปะทุ,to erupt;to spurt
-ดันผุด,to spurt
-ร่วงหล่น,to collapse (as in downfall)
-ก้าวร้าว,to be aggressive
-ตื่นตระหนก,to panic
-ยืนหยัด,to be steadfast;to persevere in
-ล้มเลิก,to collapse (as in destruction)
-ประชากร,population
-ชานเมือง,suburb
-รองรับ,to support;to bear;to prop
-จารึก,to inscribe (stone or metal)
-อาชญากรรม,crime
-ประจักษ์พยาน,eyewitness
-ตะวันออกเฉียงใต้,southeast
-คืบหน้า,to progress
-ชีวิตความเป็นอยู่,lifestyle
-ชนชั้นสูง,upper class
-ชนชั้นต่ำ,lower class
-ทาส,slave
-ทองถิ่น,local
-เกร็ง,nervous;to be stressed
-โม้,to boast
-ปัจเจก,individual
-บรรณาธิการ,editor
-คุกคาม,to threaten
-คลุ้มคลั่ง,to be mad or crazy
-ตอบสนอง,to respond
-ความเป็นไปได้,possibilities
-หมวดหมู่,category
-คำนวณ,to calculate
-คล้ายคลึง,analogous
-ประสิทธิภาพ,efficiency;efficacy
-ปัจจัย,factor
-ประการ,aspects;kinds
-เนื้อหา,content;material
-จำลอง,to mock or mimic
-ประสิทธิผล,effectiveness
-ความก้าวหน้า,progress
-สอดคล้อง,in line with;to be according to a guideline
-ประมวลผล,to process
-รูปแบบ,style
-เชิงลึก,in-depth
-หลักการ,principle
-โครงข่ายประสาทเทียม,artifical neural network
-ประสาท,nerve;to bestow
-ต้นแบบ,prototype
-ป้อนข้อความ,to enter a message
-แม่นยำ,precise
-รวบรวม,to compile;to collect
-วางรากฐาน,to lay the foundation
-ปริมาณ,volume;amount
-ครอบคลุม,comprehensive;to engulf;to hold
-การเลือกชนิด,specification
-วิเคราะห์,to analyze
-รูปประกอบ,illustration
-แบบจำลอง,model;replica
-คุณลักษณะ,attributes;traits
-แบบแผน,pattern
-ซับซ้อน,complicated;complex
-ฝึกฝน,to practice;to train
-แยกแยะระหว่าง,to distinguish between
-ระบุความแตกต่าง,to specify the differences
-จำแนก,to classify
-ทำนาย,to predict
-รู้จำ,to recognize
-ลำดับ,order (as in order and disorder)
-แฝง,to disguise;to conceal
-คุณสมบัติ,feature (attribute)
-ตัวแปร,variable
-ประยุกต์ใช้,to adapt
-การสุ่มตัวอย่าง,random sampling
-การกระจายความน่าจะเป็น,probability distribution
-กระชับ,compact;concise
-เฉพาะเจาะจง,to be specific
-หลีกเลี่ยงอคติ,to avoid bias or prejudice
-กำกวม,to be ambiguous
-คลุมเครือ,to be vague
-ความเชี่ยวชาญ,expertise
-ความเชี่ยวชาญเฉพาะด้าน,specialization
-ข้อจำกัดหรือข้อกำหนด,restrictions or requirements
-บริบท,context
-ทักษะการ,skills
-ความเกี่ยวข้อง,relevance
-พิจารณา,to consider
-จริยธรรม,ethics
-ปัญญาประดิษฐ์,artificial intelligence
-นำเสนอผลงาน,presentation
-แง่มุม,aspect;point of view
-เน้น,to emphasize
-วิธีการ,mechanism;way
-เบื้องต้น,preliminary
-ภาระงาน,workload
-ยืดหยุ่น,to be resilient;to be flexible
-รอมชอม,to compromise;to come to terms
-หารือ,to consult
-พนัน,to bet
-ปัง,bang
-ทรัพยากร,resources
-ตกมัน,to be in rut
-สังกัด,to be affiliated to; to be a member of
-ระแวง,to be wary
-ประสาน,to coordinate
-อัครราชทูต,ambassador
-พิทักษ์,to act as a trustee
-ล้นหลาม,overwhelming
-ระหองระแหง,feud
-เปิบ,to eat with hand
-ที่สาธารณะ,public place
-สะท้อน,to reflect
-ค่านิยม,current value
-ตัวสำรอง,substitution
-ขี้อวด,to show off
-จิบ,to sip
-หรูหรา,luxurious
-จ่ายฟุ่นเฟือย,to spend extravagantly
-ยกย่อง,to praise
-เอกลักษณ์,identity;trait
-ปั้น,to mould;to knead
-รัชกาล,reign
-ร่วม,to join
-เป็นกันเปง,to be friendly
-ฐานะพลเมือง,citizenship
-พลเมือง,population
-ประชากรศาสตร์,demography
-ประชาชน,citizen
-ประชาชาติ,nation
-ประชาทัณฑ์,lynch law
-ชั้นเรียน,class (classroom)
-วงกลม,circle
-พับเพียง,to sit squat with the legs folded on the side
-นุ่งซิ่น,to wear a skirt (Thai or Lao Style)
-นุ่งโจง,to wear a loin cloth
-นุ่งผ้าถุง,to wear a sarong
-น้ำย่อย,gastric juice
-เมี่ยง,food wrapped in a leaf (Thai or Lao)
-คนเก็บตัว,introvert
-มาตรการ,measures;orders
-ปฏิรูป,to reform
-การสร้างงาน,employment
-อักเสบ,to be inflamed or infected
-เห็ดถอบ,a type of mushroom
-กำหนด,to specify;to be noted
-แง่ร้าย,pessimistic
-แง่ดี,optimistic
-มลพิษ,pollution
-ลักษณะนิสัย,personality traits
