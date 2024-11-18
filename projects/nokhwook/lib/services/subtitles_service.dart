@@ -73,10 +73,10 @@ class SubtitlesService {
         /// RangeSearch returns the index right after the pivot ends.
         /// We adjust the alignment to select the range that overlaps with the pivot.
         alignment = alignment == -1 ? alignment : alignment - 1;
-        final alignedMatch = languageSubtitles[lang]!.subtitles[alignment];
-        print('Match: ${searchMatch.text} Pivot: ${searchMatch.endTime}'
-            ' Alignment: $alignment Start: ${alignedMatch.startTime} End: ${alignedMatch.endTime}'
-            ' Text: ${alignedMatch.text}');
+        // final alignedMatch = languageSubtitles[lang]!.subtitles[alignment];
+        // print('Match: ${searchMatch.text} Pivot: ${searchMatch.endTime}'
+        //     ' Alignment: $alignment Start: ${alignedMatch.startTime} End: ${alignedMatch.endTime}'
+        //     ' Text: ${alignedMatch.text}');
         return alignment;
       }).toList();
     });
