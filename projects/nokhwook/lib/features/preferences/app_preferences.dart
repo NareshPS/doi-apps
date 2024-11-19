@@ -64,7 +64,7 @@ class _AppPreferencesState extends State<AppPreferences> {
             ),
             SettingsTile.navigation(
               title: Text(
-                'Speed',
+                'Duration',
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               leading: Icon(
@@ -72,7 +72,7 @@ class _AppPreferencesState extends State<AppPreferences> {
                 color: Theme.of(context).colorScheme.primary,
               ),
               trailing: Text(
-                '${randomPlaySpeed.toStringAsFixed(1)}s',
+                '${(randomPlaySpeed * randomSampleSize).toStringAsFixed(1)}s',
                 style: Theme.of(context)
                     .textTheme
                     .labelLarge!
@@ -81,7 +81,7 @@ class _AppPreferencesState extends State<AppPreferences> {
               value: Column(
                 children: [
                   const Text(
-                    'It indicates the play speed of the cards in seconds.',
+                    'It indicates the total play duration of random cards in seconds.',
                   ),
                   Slider(
                     min: .5,

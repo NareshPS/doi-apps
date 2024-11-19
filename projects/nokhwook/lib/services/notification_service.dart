@@ -54,7 +54,7 @@ class NotificationService {
     // Cancel existing reminder and schedule a new one.
     plugin.cancel(category.index).then((value) => plugin.periodicallyShow(
         category.index, title, desc, freq, details,
-        androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+        androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
         payload: jsonEncode({'wordId': wordId})));
   }
 

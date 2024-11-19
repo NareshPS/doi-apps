@@ -22,59 +22,67 @@ class _WelcomeState extends State<Welcome> {
     final vocab = context.watch<Vocab>();
     final memorizedSubset = context.watch<MemorizedSubset>();
     final reminderMessage = context.watch<WordReminderMessage?>();
-    final errorMessage = context.watch<String?>();
-
-    if (errorMessage != null) errors.add(errorMessage);
 
     logger.i(
         'Memorized Subset: ${memorizedSubset.subset} Reminder: ${reminderMessage?.wordId}');
-    // return Column(
     return ListView(
-      // mainAxisAlignment: MainAxisAlignment.start,
-      // mainAxisSize: MainAxisSize.min,
       children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.secondary,
-                borderRadius: BorderRadius.circular(4.0)),
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: errors
-                  .map((e) => Text(
-                        e,
-                        style: Theme.of(context)
-                            .textTheme
-                            .headlineSmall!
-                            .copyWith(
-                                color:
-                                    Theme.of(context).colorScheme.onSecondary),
-                      ))
-                  .toList(),
-            ),
-          ),
-        ),
+        errors.isNotEmpty
+            ? Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.secondary,
+                      borderRadius: BorderRadius.circular(4.0)),
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: errors
+                        .map((e) => Text(
+                              e,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headlineSmall!
+                                  .copyWith(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onSecondary),
+                            ))
+                        .toList(),
+                  ),
+                ),
+              )
+            : const SizedBox.shrink(),
         reminderMessage?.wordId != null
             ? WordStage(
                 vocab: vocab,
                 wordId: reminderMessage?.wordId,
               )
-            : const Text(''),
+            : const SizedBox.shrink(),
         Center(
           child: Padding(
             padding: const EdgeInsets.only(top: 8.0),
-            child: Text(
-              'You have learnt ${memorizedSubset.subset.length} words!',
-              style: Theme.of(context).textTheme.headlineSmall,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                padding: const EdgeInsets.all(8.0),
+                child: memorizedSubset.subset.isNotEmpty
+                    ? Text(
+                        'You have saved ${memorizedSubset.subset.length} ${memorizedSubset.subset.length == 1 ? 'word' : 'words'}!',
+                        style: Theme.of(context).textTheme.headlineSmall,
+                      )
+                    : Text(
+                        'Click the shuffle tab to take a look at some words. The saved words will appear here!',
+                        style: Theme.of(context).textTheme.headlineSmall,
+                      ),
+              ),
             ),
           ),
         ),
         if (memorizedSubset.subset.isNotEmpty)
           Center(
             child: WordGrid(
-                title: 'Memorized Words',
+                title: 'Saved Words',
                 vocab: vocab,
                 subset: memorizedSubset.subset),
           ),

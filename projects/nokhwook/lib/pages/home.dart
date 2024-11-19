@@ -58,6 +58,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 icon: const Icon(Icons.brightness_auto_rounded))
           ],
         ),
+        // Check out TabBar: https://docs.flutter.dev/cookbook/design/tabs
         body: TabBarView(
             controller: tabController,
             children: const [Welcome(), RandomStage(), AppPreferences()]),

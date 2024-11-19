@@ -34,7 +34,7 @@ class WordReminder {
         final payload =
             jsonDecode(details.notificationResponse!.payload ?? '{}');
 
-        errorController.add('WordReminder: Initialization through reminder');
+        // errorController.add('WordReminder: Initialization through reminder');
         message = WordReminderMessage(wordId: payload['wordId']);
       } else {
         message = WordReminderMessage(wordId: null);
@@ -66,7 +66,7 @@ class WordReminder {
     //     wordReminderTitle('Daily', words.header, words[dailyWordId]),
     //     wordReminderDesc(words.header, words[dailyWordId]));
 
-    errorController.add('WordReminder: Scheduling reminder');
+    // errorController.add('WordReminder: Scheduling reminder');
   }
 
   wordReminderTitle(String prefix, List<String> header, Word w) =>
@@ -79,7 +79,7 @@ class WordReminder {
     final payload = jsonDecode(details.payload ?? '{}');
     logger.i('Received notification: ${details.payload}');
 
-    errorController.add('WordReminder: Notification received');
+    // errorController.add('WordReminder: Notification received');
 
     messageController.add(WordReminderMessage(wordId: payload['wordId']));
   }

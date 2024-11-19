@@ -30,6 +30,7 @@ class FixableFloatingActionButton extends StatelessWidget {
               FloatingActionButton(
                 onPressed: onPressed,
                 backgroundColor: Theme.of(context).colorScheme.primary,
+                shape: CircleBorder(),
                 child: child,
               ),
             ],

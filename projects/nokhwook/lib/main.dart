@@ -32,7 +32,6 @@ initializeNotifications(vocab) async {
   final reminder = WordReminder(notificationService: notificationService);
 
   reminder.initialize(vocab);
-  errorController.add('Main: Initializing WordReminder');
   return reminder;
 }
 
@@ -58,7 +57,6 @@ Future<void> main() async {
     providers: [
       FutureProvider(create: (context) => loadVocabulary(), initialData: null),
       FutureProvider(create: (context) => loadSubtitles(), initialData: null),
-      // Provider(create: (context) => NotificationService()),
       FutureProvider(
           create: (context) => SharedPreferences.getInstance(),
           initialData: null),
@@ -72,7 +70,6 @@ Future<void> main() async {
       }),
       StreamProvider<WordReminderMessage?>(
           create: (context) => WordReminder.messageController.stream,
-          // context.read<WordReminder>().messageController.stream,
           initialData: null),
       StreamProvider<String?>(
           create: (context) => errorController.stream, initialData: null)
@@ -89,7 +86,6 @@ Future<void> main() async {
             return (Provider.of<SharedPreferences?>(context) != null &&
                     Provider.of<Vocab?>(context) != null &&
                     Provider.of<SubtitlesService?>(context) != null)
-                // Provider.of<Vocab?>(context) != null)
                 ? const Home()
                 : Container(
                     color: Colors.red[400],
