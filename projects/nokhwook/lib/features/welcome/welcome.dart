@@ -68,7 +68,7 @@ class _WelcomeState extends State<Welcome> {
                 padding: const EdgeInsets.all(8.0),
                 child: memorizedSubset.subset.isNotEmpty
                     ? Text(
-                        'You have saved ${memorizedSubset.subset.length} ${memorizedSubset.subset.length == 1 ? 'word' : 'words'}!',
+                        'You have saved ${memorizedSubset.subset.length} ${memorizedSubset.subset.length == 1 ? 'word' : 'words'} to practice.',
                         style: Theme.of(context).textTheme.headlineSmall,
                       )
                     : Text(

@@ -64,7 +64,7 @@ class _AppPreferencesState extends State<AppPreferences> {
             ),
             SettingsTile.navigation(
               title: Text(
-                'Duration',
+                'Play Duration',
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               leading: Icon(
