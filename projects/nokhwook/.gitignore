@@ -2,7 +2,7 @@
 key.properties
 
 # Lock Files
-Gemfile.lock
+*.lock
 
 # Miscellaneous
 *.class
