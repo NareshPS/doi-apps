@@ -64,6 +64,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             children: const [Welcome(), RandomStage(), AppPreferences()]),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
+          iconSize: 30,
           showUnselectedLabels: false,
           showSelectedLabels: false,
           currentIndex: selectedTab,
