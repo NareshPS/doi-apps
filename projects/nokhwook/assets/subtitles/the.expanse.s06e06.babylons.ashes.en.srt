@@ -1,15 +1,15 @@
-﻿1
+1
 00:00:00,001 --> 00:00:05,963
-<font color="#ffff00">Provided by explosiveskull</font>
+Provided by explosiveskull
 https://twitter.com/kaboomskull
 
 2
 00:00:05,965 --> 00:00:08,217
-[dramatic music]
+
 
 3
 00:00:08,217 --> 00:00:10,302
-[Cortazar]
+
 My new coordination protocol
 
 4
@@ -34,7 +34,7 @@ with Joseph on Ceres.
 
 8
 00:00:23,357 --> 00:00:25,109
-[Naomi] Anytime anyone
+ Anytime anyone
 goes through a Ring,
 
 9
@@ -44,11 +44,11 @@ they're taking a massive risk.
 
 10
 00:00:27,403 --> 00:00:32,283
-♪ ♪
+ 
 
 11
 00:00:32,283 --> 00:00:33,617
-[Liaison] Inaros can rain hell
+ Inaros can rain hell
 
 12
 00:00:33,617 --> 00:00:35,453
@@ -57,7 +57,7 @@ inside the Ring Space.
 
 13
 00:00:35,453 --> 00:00:36,662
-[Sidiqi]
+
 We need to load up
 
 14
@@ -72,7 +72,7 @@ the odds are in our favor?
 
 16
 00:00:40,624 --> 00:00:42,460
-[Marco] They have size,
+ They have size,
 we have numbers.
 
 17
@@ -86,7 +86,7 @@ everywhere at once.
 
 19
 00:00:45,463 --> 00:00:47,214
-[Avasarala]
+
 We need Drummer's strength.
 
 20
@@ -131,23 +131,23 @@ I don't expect them to.
 
 29
 00:01:03,522 --> 00:01:07,026
-♪ ♪
+ 
 
 30
 00:01:16,827 --> 00:01:20,039
-♪ ♪
+ 
 
 31
 00:01:20,039 --> 00:01:23,793
-[intense musical buildup]
+
 
 32
 00:01:33,302 --> 00:01:34,637
-[click]
+
 
 33
 00:01:37,348 --> 00:01:39,183
-- [Dot] Cara, baby.
+-  Cara, baby.
 - Ow!
 
 34
@@ -163,7 +163,7 @@ just run off.
 36
 00:01:42,937 --> 00:01:44,230
 - I'm okay.
-- [Gary] You scared the hell
+-  You scared the hell
 
 37
 00:01:44,230 --> 00:01:45,731
@@ -172,8 +172,8 @@ just run off.
 
 38
 00:01:45,731 --> 00:01:47,107
-[Gary] What did you do with Xan?
-[Dot] Why would you do that?
+ What did you do with Xan?
+ Why would you do that?
 
 39
 00:01:47,107 --> 00:01:48,275
@@ -213,15 +213,15 @@ Where is your brother?
 
 47
 00:02:03,415 --> 00:02:05,376
-[door opens]
+
 
 48
 00:02:05,376 --> 00:02:08,379
-[tense music]
+
 
 49
 00:02:08,379 --> 00:02:13,259
-♪ ♪
+ 
 
 50
 00:02:13,259 --> 00:02:15,010
@@ -248,7 +248,7 @@ It's Xan, stop!
 
 55
 00:02:23,185 --> 00:02:24,895
-[Dot] No, baby, it's not Xan.
+ No, baby, it's not Xan.
 It can't be.
 
 56
@@ -258,29 +258,29 @@ He's gone.
 
 57
 00:02:26,814 --> 00:02:28,023
-- [Cara] No!
+-  No!
 - Daddy?
 
 58
 00:02:28,023 --> 00:02:30,109
 - Ahh!
-- [Cara] Stop, no!
+-  Stop, no!
 
 59
 00:02:30,109 --> 00:02:37,116
-♪ ♪
+ 
 
 60
 00:02:40,995 --> 00:02:42,329
-[Cara] No!
+ No!
 
 61
 00:02:42,329 --> 00:02:44,206
-[Xan] Daddy...
+ Daddy...
 
 62
 00:02:44,206 --> 00:02:47,334
-[banging]
+
 
 63
 00:02:49,336 --> 00:02:51,714
@@ -288,7 +288,7 @@ I'm calling the soldiers.
 
 64
 00:02:51,714 --> 00:02:54,091
-♪ ♪
+ 
 
 65
 00:02:54,091 --> 00:02:56,844
@@ -309,32 +309,32 @@ Cara, Cara!
 
 69
 00:03:05,436 --> 00:03:07,271
-[Cara] Mommy, Daddy!
-[Gary] Cara!
+ Mommy, Daddy!
+ Cara!
 
 70
 00:03:07,271 --> 00:03:08,522
-[Cara] Over here!
+ Over here!
 Mommy, Daddy!
 
 71
 00:03:08,522 --> 00:03:09,899
-[Gary] Just keep talking!
+ Just keep talking!
 We're almost there!
 
 72
 00:03:09,899 --> 00:03:11,775
-[Dot] Baby, we're coming!
-[Gary] We're gonna find you!
+ Baby, we're coming!
+ We're gonna find you!
 
 73
 00:03:11,775 --> 00:03:14,737
-- [banging continues]
-- [parents calling outside]
+- 
+- 
 
 74
 00:03:15,946 --> 00:03:19,116
-- [Xan] They're scared of me.
+-  They're scared of me.
 - I know, I'm sorry.
 
 75
@@ -348,7 +348,7 @@ Come on.
 
 77
 00:03:23,162 --> 00:03:26,248
-[Cara's voice]
+
 Mommy, Daddy, I'm over here!
 
 78
@@ -357,11 +357,11 @@ Mommy, Daddy!
 
 79
 00:03:27,958 --> 00:03:30,961
-[dramatic music]
+
 
 80
 00:03:30,961 --> 00:03:37,968
-♪ ♪
+ 
 
 81
 00:03:40,012 --> 00:03:42,222
@@ -374,8 +374,8 @@ You'll die.
 
 83
 00:03:44,683 --> 00:03:48,228
-- [purring]
-- [brush rustling]
+- 
+- 
 
 84
 00:03:50,230 --> 00:03:54,610
@@ -384,11 +384,11 @@ If I die, the dogs will fix me.
 
 85
 00:03:54,610 --> 00:04:01,617
-♪ ♪
+ 
 
 86
 00:04:16,548 --> 00:04:19,218
-[Sidiqi] Free Navy is using
+ Free Navy is using
 standard evasion tactics
 
 87
@@ -423,7 +423,7 @@ head-to-head.
 
 93
 00:04:35,401 --> 00:04:37,778
-[Avasarala] Marco Inaros
+ Marco Inaros
 doesn't want to slug it out.
 
 94
@@ -497,7 +497,7 @@ with fewer ships.
 
 109
 00:05:16,191 --> 00:05:18,027
-[Sidiqi] The strength
+ The strength
 of the Free Navy warships
 
 110
@@ -526,7 +526,7 @@ to handle them.
 
 115
 00:05:30,706 --> 00:05:32,041
-[Drummer] Don't worry about us.
+ Don't worry about us.
 
 116
 00:05:32,041 --> 00:05:33,417
@@ -600,7 +600,7 @@ on a hard burn to get here.
 
 131
 00:06:08,869 --> 00:06:10,746
-[Bobbie] We will rendezvous
+ We will rendezvous
 with an old ice hauler,
 
 132
@@ -758,35 +758,35 @@ you have lived this long.
 
 164
 00:07:21,233 --> 00:07:24,444
-♪ ♪
+ 
 
 165
 00:07:24,444 --> 00:07:28,240
-[pensive instrumental music]
+
 
 166
 00:07:28,240 --> 00:07:35,247
-♪ ♪
+ 
 
 167
 00:07:42,171 --> 00:07:45,174
-[woman singing in Norwegian]
+
 
 168
 00:07:45,174 --> 00:07:52,181
-♪ ♪
+ 
 
 169
 00:08:06,612 --> 00:08:13,827
-♪ ♪
+ 
 
 170
 00:08:40,729 --> 00:08:44,149
-[background chatter]
+
 
 171
 00:08:49,821 --> 00:08:52,449
-[Filip] Reporting for duty
+ Reporting for duty
 as ordered.
 
 172
@@ -800,7 +800,7 @@ always kiss the Inners' boot.
 
 174
 00:09:01,166 --> 00:09:02,918
-[officer]
+
 Welwalla finally gonya get
 
 175
@@ -809,12 +809,12 @@ what she deserve then, keya?
 
 176
 00:09:05,003 --> 00:09:06,964
-[crew member] We will rewrite
+ We will rewrite
 the history book.
 
 177
 00:09:06,964 --> 00:09:09,466
-[light laughs]
+
 
 178
 00:09:13,428 --> 00:09:15,806
@@ -848,12 +848,12 @@ to count on you.
 
 184
 00:09:30,237 --> 00:09:32,155
-[Marco] Monitor the situation,
+ Monitor the situation,
 but no open comms.
 
 185
 00:09:32,155 --> 00:09:34,700
-[crew member]
+
 Aye, Captain.
 
 186
@@ -862,7 +862,7 @@ Good.
 
 187
 00:09:45,752 --> 00:09:47,754
-[Marco] I told you they would
+ I told you they would
 split their forces.
 
 188
@@ -899,20 +899,20 @@ more from Duarte?
 
 195
 00:10:09,818 --> 00:10:12,321
-[Marco] Well, you know how much
+ Well, you know how much
 I like surprises.
 
 196
 00:10:12,321 --> 00:10:15,324
-[uneasy music]
+
 
 197
 00:10:15,324 --> 00:10:22,331
-♪ ♪
+ 
 
 198
 00:10:35,552 --> 00:10:37,471
-[Holden grunts]
+
 
 199
 00:10:41,266 --> 00:10:43,769
@@ -971,7 +971,7 @@ worthy enough to fly it.
 
 211
 00:11:21,723 --> 00:11:24,434
-[chuckles]
+
 
 212
 00:11:26,686 --> 00:11:28,063
@@ -985,15 +985,15 @@ that story a lot.
 
 214
 00:11:34,903 --> 00:11:36,029
-[grunts]
+
 
 215
 00:11:37,197 --> 00:11:39,282
-[Clarissa] Sorry.
+ Sorry.
 
 216
 00:11:40,951 --> 00:11:42,994
-[Amos] Why don't you
+ Why don't you
 go get some rest?
 
 217
@@ -1011,7 +1011,7 @@ I promise.
 
 220
 00:11:56,007 --> 00:11:58,635
-[Clarissa] I'm gonna go restock
+ I'm gonna go restock
 the fast-patch kits.
 
 221
@@ -1055,7 +1055,7 @@ Thanks, boss.
 
 230
 00:12:22,284 --> 00:12:23,994
-[Amos] The injectors
+ The injectors
 are my responsibility.
 
 231
@@ -1119,23 +1119,23 @@ in the same way.
 
 244
 00:13:05,160 --> 00:13:09,539
-[high-pitched ringing]
+
 
 245
 00:13:15,545 --> 00:13:18,131
-[grunts]
+
 
 246
 00:13:21,760 --> 00:13:25,305
-[whimpers]
+
 
 247
 00:13:28,183 --> 00:13:31,645
-[breathing hard]
+
 
 248
 00:14:07,514 --> 00:14:09,933
-[Holden] What's all this?
+ What's all this?
 
 249
 00:14:11,935 --> 00:14:15,021
@@ -1152,8 +1152,8 @@ I'll set the table.
 
 252
 00:14:19,859 --> 00:14:22,779
-[Amos] What smells so good?
-[Naomi] What do we have here?
+ What smells so good?
+ What do we have here?
 
 253
 00:14:22,779 --> 00:14:24,614
@@ -1162,7 +1162,7 @@ seco de carne
 
 254
 00:14:24,614 --> 00:14:28,243
-with soy tequeños on the side,
+with soy tequeos on the side,
 our chef's specialty...
 
 255
@@ -1199,26 +1199,26 @@ I'm not that hungry.
 
 262
 00:14:45,760 --> 00:14:47,095
-[Bobbie]
+
 You need a hand, Clarissa?
 
 263
 00:14:47,095 --> 00:14:48,597
-[Amos] You're gonna grab
+ You're gonna grab
 with your hand? Get a spoon.
 
 264
 00:14:48,597 --> 00:14:50,056
-[Bobbie] Hang on.
+ Hang on.
 
 265
 00:14:52,642 --> 00:14:54,686
-[Naomi] She's trying to wash
+ She's trying to wash
 the blood off her hands.
 
 266
 00:14:54,686 --> 00:14:55,979
-[Bobbie] Can I try it now?
+ Can I try it now?
 
 267
 00:14:55,979 --> 00:14:58,356
@@ -1240,11 +1240,11 @@ I'm glad you did.
 
 271
 00:15:05,905 --> 00:15:08,908
-[soft music]
+
 
 272
 00:15:08,908 --> 00:15:12,579
-♪ ♪
+ 
 
 273
 00:15:12,579 --> 00:15:14,831
@@ -1294,7 +1294,7 @@ straight in the fucking eye.
 
 283
 00:15:41,316 --> 00:15:43,735
-[beep beep]
+
 
 284
 00:15:45,528 --> 00:15:47,614
@@ -1312,42 +1312,42 @@ being one a lot.
 
 287
 00:15:56,373 --> 00:16:01,086
-♪ ♪
+ 
 
 288
 00:16:01,086 --> 00:16:03,338
-Tequeños?
+Tequeos?
 
 289
 00:16:03,338 --> 00:16:05,423
-- [Bobbie] This is good.
+-  This is good.
 - Thank you.
 
 290
 00:16:05,423 --> 00:16:08,510
-[Clarissa] Not too much salt?
-[Bobbie] Mm-mm.
+ Not too much salt?
+ Mm-mm.
 
 291
 00:16:10,303 --> 00:16:12,972
-[Amos]
+
 He can get his own pot.
 
 292
 00:16:12,972 --> 00:16:15,058
-[Bobbie] Ha.
+ Ha.
 
 293
 00:16:15,058 --> 00:16:22,065
-♪ ♪
+ 
 
 294
 00:16:37,539 --> 00:16:43,545
-[voice reading poetry in Hindi]
+
 
 295
 00:16:48,133 --> 00:16:50,385
-[officer] Madam Secretary
+ Madam Secretary
 General, CIC.
 
 296
@@ -1365,15 +1365,15 @@ I'm on my way.
 
 299
 00:17:01,396 --> 00:17:08,403
-♪ ♪
+ 
 
 300
 00:17:15,785 --> 00:17:17,412
-[beep beep]
+
 
 301
 00:17:19,998 --> 00:17:21,791
-[announcer]
+
 Combined fleet flash.
 
 302
@@ -1387,15 +1387,15 @@ and will engage.
 
 304
 00:17:26,337 --> 00:17:33,344
-♪ ♪
+ 
 
 305
 00:17:35,597 --> 00:17:38,767
-[background chatter]
+
 
 306
 00:17:55,909 --> 00:17:58,787
-[device chimes]
+
 
 307
 00:17:58,787 --> 00:18:01,623
@@ -1409,7 +1409,7 @@ main Free Navy battle group.
 
 309
 00:18:04,000 --> 00:18:06,586
-- [Drummer] I heard.
+-  I heard.
 - If they kill Marco without us
 
 310
@@ -1437,7 +1437,7 @@ make the rest surrender or run.
 
 315
 00:18:18,848 --> 00:18:20,683
-[Walker]
+
 Oh, we not the freighter run.
 
 316
@@ -1455,16 +1455,16 @@ happy to take what is his.
 
 319
 00:18:29,067 --> 00:18:32,779
-[tense music]
+
 
 320
 00:18:32,779 --> 00:18:35,240
-[CIC voice]
+
 Torpedoes are away.
 
 321
 00:18:54,884 --> 00:18:58,429
-[Avasarala] You look nervous.
+ You look nervous.
 
 322
 00:18:58,429 --> 00:19:01,224
@@ -1501,7 +1501,7 @@ given, I will give them myself.
 
 329
 00:19:27,125 --> 00:19:29,586
-[Lieutenant] I wish we had
+ I wish we had
 more assets on our flank.
 
 330
@@ -1529,7 +1529,7 @@ the sad story of our species.
 
 335
 00:19:42,724 --> 00:19:45,143
-[Belter crew member] I want to
+ I want to
 capture the freighter intact.
 
 336
@@ -1547,11 +1547,11 @@ Fire!
 
 339
 00:19:54,444 --> 00:19:57,363
-[dramatic music]
+
 
 340
 00:19:57,363 --> 00:20:04,078
-♪ ♪
+ 
 
 341
 00:20:08,708 --> 00:20:10,752
@@ -1575,12 +1575,12 @@ on the frigate.
 
 345
 00:20:25,224 --> 00:20:27,852
-[CIC voice]
+
 Direct hit on Pella.
 
 346
 00:20:31,689 --> 00:20:33,900
-[lieutenant] The Pella's hurt.
+ The Pella's hurt.
 They're falling back.
 
 347
@@ -1604,7 +1604,7 @@ is on that ship.
 
 351
 00:21:03,304 --> 00:21:05,014
-[Tynan crew member]
+
 Captain, all ships report,
 
 352
@@ -1614,7 +1614,7 @@ at the freighter.
 
 353
 00:21:06,933 --> 00:21:08,267
-[Dewalt crewman]
+
 Copy, all missile systems.
 
 354
@@ -1628,26 +1628,26 @@ one, two, three, checking.
 
 356
 00:21:15,566 --> 00:21:17,819
-[Tynan crew member]
+
 All targeting systems green.
 
 357
 00:21:17,819 --> 00:21:19,737
-[Dewart crewman]
+
 Stand by for firing.
 
 358
 00:21:19,737 --> 00:21:21,739
 - It isn't a freighter.
-- [crew member] Standing by.
+-  Standing by.
 
 359
 00:21:21,739 --> 00:21:28,746
-♪ ♪
+ 
 
 360
 00:21:34,168 --> 00:21:36,713
-[crew member] Hull plates away.
+ Hull plates away.
 
 361
 00:21:39,590 --> 00:21:40,758
@@ -1660,7 +1660,7 @@ counter batteries, fire!
 
 363
 00:21:56,524 --> 00:21:58,818
-[Marco] Cut thrust.
+ Cut thrust.
 Broadside to incoming!
 
 364
@@ -1669,12 +1669,12 @@ All guns free-fire!
 
 365
 00:22:07,076 --> 00:22:09,954
-[Dewalt crewman]
+
 Captain, we've got the...
 
 366
 00:22:17,336 --> 00:22:19,714
-[crew member]
+
 Drusilla here, still alive.
 
 367
@@ -1683,7 +1683,7 @@ But our missile ran dry.
 
 368
 00:22:23,301 --> 00:22:24,802
-[Kandahar crewman]
+
 Khandahar here also.
 
 369
@@ -1693,11 +1693,11 @@ All we can do is fly.
 
 370
 00:22:27,889 --> 00:22:30,183
-[grunts]
+
 
 371
 00:22:30,183 --> 00:22:33,478
-[labored breathing]
+
 
 372
 00:22:37,023 --> 00:22:38,399
@@ -1705,7 +1705,7 @@ Report.
 
 373
 00:22:38,399 --> 00:22:40,777
-[Tynan crew member]
+
 Drive intact, reactor failing.
 
 374
@@ -1759,7 +1759,7 @@ Leave the Pella to me.
 
 385
 00:23:08,179 --> 00:23:09,889
-[Tynan crew member]
+
 A collision course? Captain...
 
 386
@@ -1776,7 +1776,7 @@ That will help.
 
 389
 00:23:17,605 --> 00:23:19,607
-[klaxon]
+
 
 390
 00:23:22,777 --> 00:23:25,696
@@ -1796,11 +1796,11 @@ Tenye wa chesh gut.
 
 394
 00:23:34,413 --> 00:23:41,337
-♪ ♪
+ 
 
 395
 00:23:55,184 --> 00:23:58,688
-[alarms blaring]
+
 
 396
 00:23:58,688 --> 00:24:00,982
@@ -1809,7 +1809,7 @@ Hull breach on deck four.
 
 397
 00:24:00,982 --> 00:24:02,567
-[officer]
+
 Got a problem in reactor!
 
 398
@@ -1828,20 +1828,20 @@ drive three and drive...
 
 401
 00:24:08,906 --> 00:24:10,575
-[screams]
+
 
 402
 00:24:10,575 --> 00:24:13,995
-- [alarms blaring]
-- [indistinct chatter]
+- 
+- 
 
 403
 00:24:13,995 --> 00:24:17,081
-[Rosenfeld gasping]
+
 
 404
 00:24:17,081 --> 00:24:19,333
-[coughing]
+
 
 405
 00:24:19,333 --> 00:24:21,878
@@ -1863,11 +1863,11 @@ She needs help!
 
 409
 00:24:32,805 --> 00:24:39,812
-♪ ♪
+ 
 
 410
 00:24:46,235 --> 00:24:47,778
-[UNN SIGINT]
+
 All combined fleet elements,
 
 411
@@ -1891,13 +1891,13 @@ Ship status.
 
 415
 00:24:57,121 --> 00:24:59,248
-[Tynan crew member]
+
 Reactor on low but stable.
 
 416
 00:24:59,248 --> 00:25:02,001
 - We can still limp.
-- [Drummer] Tightbeam Fleet.
+-  Tightbeam Fleet.
 
 417
 00:25:02,001 --> 00:25:05,796
@@ -1914,32 +1914,32 @@ Tenye wa chesh gut, Rocinante.
 
 420
 00:25:28,194 --> 00:25:29,528
-[Cooper]
+
 Cooper, ready.
 
 421
 00:25:30,613 --> 00:25:33,407
-[Gates]
+
 Gates, ready.
 
 422
 00:25:33,407 --> 00:25:34,867
-[Rogan]
+
 Rogan, ready.
 
 423
 00:25:34,867 --> 00:25:36,827
-[Stone]
+
 Stone, ready.
 
 424
 00:25:39,080 --> 00:25:40,957
-[Hudson]
+
 Hudson, ready.
 
 425
 00:25:40,957 --> 00:25:42,166
-[Burton]
+
 Burton, ready.
 
 426
@@ -1987,22 +1987,22 @@ nav link is solid.
 
 435
 00:25:59,767 --> 00:26:00,977
-[Drake]
+
 Drake, ready.
 
 436
 00:26:00,977 --> 00:26:03,104
-[Clarissa] Ring comm relay
+ Ring comm relay
 ready for deploy.
 
 437
 00:26:03,104 --> 00:26:05,147
-[Ripley]
+
 Ripley, ready.
 
 438
 00:26:05,147 --> 00:26:06,941
-[Star]
+
 Star, ready.
 
 439
@@ -2113,7 +2113,7 @@ Fuck.
 
 462
 00:28:23,661 --> 00:28:25,246
-[groans]
+
 
 463
 00:28:26,497 --> 00:28:28,624
@@ -2122,7 +2122,7 @@ The hit rate's going down.
 
 464
 00:28:28,624 --> 00:28:30,376
-[Clarissa] They're burning
+ They're burning
 reaction mass like crazy.
 
 465
@@ -2136,16 +2136,16 @@ a chance to land.
 
 467
 00:28:36,424 --> 00:28:37,675
-[groaning]
+
 
 468
 00:28:40,219 --> 00:28:41,971
-[groans]
+
 Damage report!
 
 469
 00:28:41,971 --> 00:28:44,223
-[alarm beeping]
+
 
 470
 00:28:45,349 --> 00:28:47,726
@@ -2158,7 +2158,7 @@ We're losing power.
 
 472
 00:28:53,607 --> 00:28:55,317
-[Naomi] I'm seeing
+ I'm seeing
 multiple faults in the grid!
 
 473
@@ -2180,7 +2180,7 @@ If we slow down, we're dead.
 
 477
 00:29:01,157 --> 00:29:03,451
-[alarm blaring]
+
 
 478
 00:29:03,451 --> 00:29:05,327
@@ -2188,12 +2188,12 @@ I'll fix it.
 
 479
 00:29:23,721 --> 00:29:26,307
-[Holden] We're stable
+ We're stable
 but still losing power.
 
 480
 00:29:26,307 --> 00:29:30,019
-♪ ♪
+ 
 
 481
 00:29:30,019 --> 00:29:31,103
@@ -2201,11 +2201,11 @@ Ohh...
 
 482
 00:29:35,316 --> 00:29:37,318
-[coughing]
+
 
 483
 00:29:40,779 --> 00:29:43,365
-[alarm continues blaring]
+
 
 484
 00:30:00,049 --> 00:30:02,968
@@ -2224,7 +2224,7 @@ We need more thrust now.
 
 487
 00:30:06,347 --> 00:30:08,224
-[grunting, gasping]
+
 
 488
 00:30:18,734 --> 00:30:20,277
@@ -2232,7 +2232,7 @@ I know what to do.
 
 489
 00:30:21,737 --> 00:30:22,821
-[screams]
+
 
 490
 00:30:24,740 --> 00:30:26,867
@@ -2244,7 +2244,7 @@ Clarissa!
 
 492
 00:30:27,952 --> 00:30:34,959
-♪ ♪
+ 
 
 493
 00:30:35,376 --> 00:30:37,795
@@ -2296,11 +2296,11 @@ Ah, fuck.
 
 504
 00:31:35,060 --> 00:31:38,063
-[exciting music]
+
 
 505
 00:31:38,063 --> 00:31:43,360
-♪ ♪
+ 
 
 506
 00:31:43,360 --> 00:31:45,571
@@ -2370,7 +2370,7 @@ Aah!
 
 521
 00:32:48,801 --> 00:32:52,429
-[grunting, groaning]
+
 
 522
 00:32:54,765 --> 00:32:56,517
@@ -2396,12 +2396,12 @@ How many are left?
 
 527
 00:33:58,537 --> 00:34:00,456
-[Bravo team member]
+
 Bravo team, five total.
 
 528
 00:34:00,456 --> 00:34:01,707
-[Charlie team member]
+
 Charlie team, seven.
 
 529
@@ -2430,7 +2430,7 @@ That is our objective.
 534
 00:34:10,424 --> 00:34:12,342
 - Incoming!
-- [bullets ricocheting]
+- 
 
 535
 00:34:12,342 --> 00:34:15,179
@@ -2468,7 +2468,7 @@ as you approach.
 
 542
 00:34:32,821 --> 00:34:35,532
-[Bravo member] Copy that, Alpha.
+ Copy that, Alpha.
 But Bravo cannot comply.
 
 543
@@ -2487,7 +2487,7 @@ Charlie, report.
 
 546
 00:34:41,997 --> 00:34:43,457
-[Charlie team member]
+
 Charlie's toast!
 
 547
@@ -2502,7 +2502,7 @@ Machine guns chopped us up.
 
 549
 00:34:56,595 --> 00:34:58,680
-[Amos] Can Bravo give us
+ Can Bravo give us
 any help at all?
 
 550
@@ -2517,11 +2517,11 @@ Bravo, we need to push.
 552
 00:35:04,478 --> 00:35:07,064
 - Eyes up!
-- [bullets ricocheting]
+- 
 
 553
 00:35:07,064 --> 00:35:12,986
-♪ ♪
+ 
 
 554
 00:35:12,986 --> 00:35:14,404
@@ -2529,19 +2529,19 @@ Move, move, move!
 
 555
 00:35:16,907 --> 00:35:18,700
-[Amos] Go, go, go!
+ Go, go, go!
 
 556
 00:35:18,700 --> 00:35:20,619
-[Bobbie] Go, go, go, go, go!
+ Go, go, go, go, go!
 
 557
 00:35:22,246 --> 00:35:24,665
-[Amos] Draper, clear!
+ Draper, clear!
 
 558
 00:35:24,665 --> 00:35:26,583
-[Bobbie]
+
 Rocinante, attack is stalled,
 
 559
@@ -2560,7 +2560,7 @@ We need air support!
 
 562
 00:35:32,130 --> 00:35:34,550
-[Holden] Negative.
+ Negative.
 We have to stay behind Medina.
 
 563
@@ -2584,7 +2584,7 @@ and guide them in.
 
 567
 00:35:40,138 --> 00:35:41,932
-[Holden] Too much danger of
+ Too much danger of
 impacting the surface.
 
 568
@@ -2660,7 +2660,7 @@ for the station!
 583
 00:36:27,895 --> 00:36:30,731
 - Spread as you go to draw...
-- [thrusters]
+- 
 
 584
 00:36:30,731 --> 00:36:34,109
@@ -2683,15 +2683,15 @@ we got left!
 
 588
 00:36:44,828 --> 00:36:48,332
-[epic music]
+
 
 589
 00:36:48,332 --> 00:36:55,339
-♪ ♪
+ 
 
 590
 00:38:00,487 --> 00:38:03,281
-[Amos] Aah!
+ Aah!
 
 591
 00:38:05,492 --> 00:38:08,245
@@ -2703,8 +2703,8 @@ I got you, Bobbie!
 
 593
 00:38:12,541 --> 00:38:15,419
-- [Amos groans]
-- [bullets ricocheting]
+- 
+- 
 
 594
 00:38:18,171 --> 00:38:20,465
@@ -2712,7 +2712,7 @@ Aah!
 
 595
 00:38:22,968 --> 00:38:25,846
-[ricocheting stops]
+
 
 596
 00:38:36,148 --> 00:38:38,025
@@ -2720,7 +2720,7 @@ Fuck yeah, Roci.
 
 597
 00:38:39,568 --> 00:38:44,197
-[Bobbie] No other choice.
+ No other choice.
 Had to take out the guns.
 
 598
@@ -2902,11 +2902,11 @@ Aye, Captain.
 
 637
 00:41:07,007 --> 00:41:10,010
-[tense music]
+
 
 638
 00:41:10,010 --> 00:41:15,140
-♪ ♪
+ 
 
 639
 00:41:15,140 --> 00:41:17,142
@@ -2939,7 +2939,7 @@ and know this.
 
 646
 00:41:41,416 --> 00:41:44,586
-♪ ♪
+ 
 
 647
 00:41:44,586 --> 00:41:47,672
@@ -3009,7 +3009,7 @@ Beltalowda.
 
 662
 00:42:47,440 --> 00:42:53,655
-[all chanting]
+
 Beltalowda, Beltalowda,
 
 663
@@ -3037,7 +3037,7 @@ Beltalowda, Belt...
 
 668
 00:43:17,512 --> 00:43:19,431
-[Avasarala] Inaros
+ Inaros
 will arrive at the Ring
 
 669
@@ -3061,12 +3061,12 @@ Godspeed.
 
 673
 00:43:29,691 --> 00:43:31,776
-[Amos] I'd say
+ I'd say
 we're outnumbered.
 
 674
 00:43:31,776 --> 00:43:33,486
-[Bobbie] So what's the plan?
+ So what's the plan?
 
 675
 00:43:33,486 --> 00:43:36,114
@@ -3112,7 +3112,7 @@ to any of the colonies.
 
 684
 00:43:55,300 --> 00:43:56,760
-[Bobbie] Medina does.
+ Medina does.
 
 685
 00:43:56,760 --> 00:43:58,678
@@ -3136,7 +3136,7 @@ really wanna cut and run?
 
 689
 00:44:10,190 --> 00:44:17,113
-[somber music]
+
 
 690
 00:44:17,113 --> 00:44:20,658
@@ -3202,7 +3202,7 @@ There's no shame in it.
 
 703
 00:44:58,154 --> 00:45:00,407
-[Bobbie] If we can get close,
+ If we can get close,
 I could try a breach-in entry.
 
 704
@@ -3211,7 +3211,7 @@ Take a ship out that way.
 
 705
 00:45:01,658 --> 00:45:03,159
-[Holden] Your suit is shot
+ Your suit is shot
 to shit,
 
 706
@@ -3221,12 +3221,12 @@ you're gonna...
 
 707
 00:45:04,828 --> 00:45:07,080
-[Bobbie] The railgun is
+ The railgun is
 our only real asset here.
 
 708
 00:45:07,080 --> 00:45:09,707
-[chatter continues indistinctly]
+
 
 709
 00:45:09,707 --> 00:45:12,502
@@ -3285,7 +3285,7 @@ to Marco once and for all.
 
 720
 00:45:43,867 --> 00:45:50,498
-♪ ♪
+ 
 
 721
 00:47:37,939 --> 00:47:41,526
@@ -3293,11 +3293,11 @@ Veer off!
 
 722
 00:47:59,168 --> 00:48:02,589
-[stirring music]
+
 
 723
 00:48:02,589 --> 00:48:09,554
-♪ ♪
+ 
 
 724
 00:48:24,819 --> 00:48:26,321
@@ -3305,15 +3305,15 @@ Aah!
 
 725
 00:48:26,321 --> 00:48:30,199
-[emotional music]
+
 
 726
 00:48:30,199 --> 00:48:37,206
-♪ ♪
+ 
 
 727
 00:48:53,556 --> 00:48:56,976
-[Avasarala] War doesn't end
+ War doesn't end
 on the battlefield.
 
 728
@@ -3338,7 +3338,7 @@ of a transport union.
 732
 00:49:09,322 --> 00:49:11,282
 - Not even me.
-- [Avasarala] Then why are we
+-  Then why are we
 
 733
 00:49:11,282 --> 00:49:13,951
@@ -3426,7 +3426,7 @@ You have no right...
 
 751
 00:49:57,620 --> 00:49:59,080
-[Avasarala] Prime minister.
+ Prime minister.
 
 752
 00:50:03,084 --> 00:50:05,586
@@ -3505,7 +3505,7 @@ against Inaros to help you.
 
 768
 00:50:47,545 --> 00:50:48,755
-[Martian diplomat]
+
 Mars will never accept
 
 769
@@ -3515,7 +3515,7 @@ of the Ring colonies.
 
 770
 00:50:50,006 --> 00:50:51,299
-[Martian prime minister]
+
 The government would fall
 
 771
@@ -3539,7 +3539,7 @@ to Mars and Earth.
 
 775
 00:51:00,516 --> 00:51:02,393
-[Sanjrani] That promise has been
+ That promise has been
 made and broken
 
 776
@@ -3695,12 +3695,12 @@ with all sides.
 
 809
 00:52:44,495 --> 00:52:51,502
-♪ ♪
+ 
 
 810
 00:52:51,669 --> 00:52:53,588
 - Wait a minute.
-- [Avasarala] James.
+-  James.
 
 811
 00:52:53,588 --> 00:52:57,466
@@ -3709,7 +3709,7 @@ to make history again.
 
 812
 00:52:57,466 --> 00:53:04,473
-♪ ♪
+ 
 
 813
 00:53:13,441 --> 00:53:16,944
@@ -3723,7 +3723,7 @@ guaranteed in writing.
 
 815
 00:53:20,323 --> 00:53:24,243
-[voices murmuring]
+
 
 816
 00:53:24,243 --> 00:53:26,329
@@ -3731,7 +3731,7 @@ More coffee.
 
 817
 00:53:31,709 --> 00:53:33,711
-[Holden] Finally,
+ Finally,
 and most importantly,
 
 818
@@ -3765,7 +3765,7 @@ their benefits with all.
 
 824
 00:53:50,436 --> 00:53:54,190
-[applause]
+
 
 825
 00:53:54,190 --> 00:53:56,067
@@ -3794,7 +3794,7 @@ of the Transport Union.
 
 830
 00:54:09,872 --> 00:54:12,416
-[applause]
+
 
 831
 00:54:12,416 --> 00:54:17,880
@@ -3813,7 +3813,7 @@ was that Camina Drummer
 834
 00:54:23,344 --> 00:54:25,721
 - would be vice president.
-- [audience muttering]
+- 
 
 835
 00:54:25,721 --> 00:54:28,182
@@ -3873,7 +3873,7 @@ with that.
 
 847
 00:54:56,043 --> 00:54:57,628
-[whispering]
+
 Don't you fucking do it.
 
 848
@@ -3911,7 +3911,7 @@ Camina Drummer.
 
 855
 00:55:14,186 --> 00:55:17,565
-[commotion, chatter]
+
 
 856
 00:55:21,193 --> 00:55:25,865
@@ -3928,7 +3928,7 @@ It was the only way.
 
 859
 00:55:29,201 --> 00:55:30,578
-[Avasarala]
+
 The two of you planned this.
 
 860
@@ -3965,25 +3965,25 @@ And you know it.
 
 867
 00:55:45,176 --> 00:55:47,678
-[crowd shouting questions
-in background]
+crowd shouting questions
+in background
 
 868
 00:55:52,725 --> 00:55:57,855
-[sighs] Oh, James.
+ Oh, James.
 I hope you're right.
 
 869
 00:56:20,211 --> 00:56:23,380
-[moody music]
+
 
 870
 00:56:23,380 --> 00:56:30,387
-♪ ♪
+ 
 
 871
 00:56:58,332 --> 00:57:02,628
-[Holden] Just take it easy.
+ Just take it easy.
 Get the feel.
 
 872
@@ -3992,7 +3992,7 @@ The Roci's not the Razorback.
 
 873
 00:57:04,505 --> 00:57:06,382
-[Bobbie]
+
 Don't worry, I'll be gentle.
 
 874
@@ -4005,11 +4005,11 @@ I wonder what this button does.
 
 876
 00:57:14,056 --> 00:57:16,142
-[laughs]
+
 
 877
 00:57:16,142 --> 00:57:18,102
-[Amos] Sure this is
+ Sure this is
 a good idea, Cap?
 
 878
@@ -4024,7 +4024,7 @@ I hope.
 
 880
 00:57:23,482 --> 00:57:26,277
-[Clarissa] Hey,
+ Hey,
 I made something for you.
 
 881
@@ -4109,7 +4109,7 @@ Take my station.
 
 899
 00:59:07,044 --> 00:59:11,548
-[Naomi] More important that
+ More important that
 someone else's life gets better
 
 900
@@ -4160,7 +4160,7 @@ I've lived a hard life.
 
 910
 00:59:49,211 --> 00:59:56,260
-♪ ♪
+ 
 
 911
 00:59:56,260 --> 00:59:58,220
@@ -4206,21 +4206,21 @@ for a minute.
 
 920
 01:00:20,784 --> 01:00:22,536
-[small laugh]
+
 
 921
 01:00:25,122 --> 01:00:28,667
-[soft, stirring music]
+
 
 922
 01:00:28,667 --> 01:00:35,090
-♪ ♪
+ 
 
 923
 01:00:45,726 --> 01:00:49,521
-[sweeping instrumentals]
+
 
 924
 01:00:49,521 --> 01:00:56,570
-♪ ♪
+ 
 
