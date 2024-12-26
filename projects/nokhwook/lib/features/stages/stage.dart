@@ -87,69 +87,81 @@ class _StageState extends State<Stage> {
                 borderRadius: BorderRadius.circular(10.0),
               ),
               margin: const EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 0.0),
-              child: Column(children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
-                  child: Text(
-                    widget.title.toUpperCase(),
-                    style: Theme.of(context).textTheme.titleMedium,
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Theme.of(context).colorScheme.surface,
+                      Theme.of(context).colorScheme.surfaceContainerLow,
+                    ],
                   ),
                 ),
-                Expanded(
-                  child: Swiper(
-                      itemCount: (widget.subset ?? []).length,
-                      outer: true,
-                      autoplayDelay: ((widget.playSpeed ?? 0.1) * 1000).toInt(),
-                      controller: controller,
-                      itemBuilder: (context, index) {
-                        final controller = ScrollController();
+                child: Column(children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: Text(
+                      widget.title.toUpperCase(),
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                  ),
+                  Expanded(
+                    child: Swiper(
+                        itemCount: (widget.subset ?? []).length,
+                        outer: true,
+                        autoplayDelay:
+                            ((widget.playSpeed ?? 0.1) * 1000).toInt(),
+                        controller: controller,
+                        itemBuilder: (context, index) {
+                          final controller = ScrollController();
 
-                        return RawScrollbar(
-                            thumbVisibility: true,
-                            trackVisibility: true,
-                            interactive: true,
-                            radius: const Radius.circular(8.0),
-                            controller: controller,
-                            child: SingleChildScrollView(
-                                controller: controller,
-                                physics: const BouncingScrollPhysics(),
-                                child: buildItem(widget.subset![index])));
-                      },
-                      pagination: SwiperPagination(
-                          builder: SwiperCustomPagination(
-                        builder: (context, config) => Align(
-                          alignment: Alignment.bottomLeft,
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Builder(
-                                    builder: ((context) => IconButton(
-                                          onPressed: () {
-                                            memorizedSubset.append(widget
-                                                .subset![config.activeIndex]);
-                                            controller.next();
-                                          },
-                                          icon: Icon(Icons.save,
-                                              color: Theme.of(context)
-                                                  .colorScheme
-                                                  .primary),
-                                        ))),
-                                Container(
-                                  margin: const EdgeInsets.only(right: 8.0),
-                                  child: FractionPaginationBuilder(
-                                          color:
-                                              Theme.of(context).disabledColor,
-                                          activeColor: Theme.of(context)
-                                              .colorScheme
-                                              .secondary,
-                                          activeFontSize: 20.0)
-                                      .build(context, config),
-                                )
-                              ]),
-                        ),
-                      ))),
-                )
-              ]),
+                          return RawScrollbar(
+                              thumbVisibility: true,
+                              trackVisibility: true,
+                              interactive: true,
+                              radius: const Radius.circular(8.0),
+                              controller: controller,
+                              child: SingleChildScrollView(
+                                  controller: controller,
+                                  physics: const BouncingScrollPhysics(),
+                                  child: buildItem(widget.subset![index])));
+                        },
+                        pagination: SwiperPagination(
+                            builder: SwiperCustomPagination(
+                          builder: (context, config) => Align(
+                            alignment: Alignment.bottomLeft,
+                            child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Builder(
+                                      builder: ((context) => IconButton(
+                                            onPressed: () {
+                                              memorizedSubset.append(widget
+                                                  .subset![config.activeIndex]);
+                                              controller.next();
+                                            },
+                                            icon: Icon(Icons.save,
+                                                color: Theme.of(context)
+                                                    .colorScheme
+                                                    .primary),
+                                          ))),
+                                  Container(
+                                    margin: const EdgeInsets.only(right: 8.0),
+                                    child: FractionPaginationBuilder(
+                                            color:
+                                                Theme.of(context).disabledColor,
+                                            activeColor: Theme.of(context)
+                                                .colorScheme
+                                                .secondary,
+                                            activeFontSize: 20.0)
+                                        .build(context, config),
+                                  )
+                                ]),
+                          ),
+                        ))),
+                  )
+                ]),
+              ),
             ),
           ),
           if (MediaQuery.of(context).orientation == Orientation.portrait)
