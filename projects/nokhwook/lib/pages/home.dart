@@ -2,7 +2,8 @@ import 'dart:async';
 
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg_provider/flutter_svg_provider.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg_provider/flutter_svg_provider.dart' as svg_provider;
 import 'package:nokhwook/features/preferences/app_preferences.dart';
 import 'package:nokhwook/features/stages/random_stage.dart';
 import 'package:nokhwook/features/welcome/welcome.dart';
@@ -51,7 +52,28 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: const Text('Let\'s practice'),
+          title: Stack(
+            children: [
+              Align(
+                alignment: Alignment.centerLeft,
+                child: SvgPicture.asset(
+                  'assets/images/app_inverted.svg',
+                  width: 28,
+                  height: 28,
+                  colorFilter: ColorFilter.mode(
+                    Theme.of(context).colorScheme.primary,
+                    BlendMode.srcIn,
+                  ),
+                ),
+              ),
+              Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    'Nokhwook: Thai Cards',
+                    style: Theme.of(context).textTheme.titleLarge,
+                  )),
+            ],
+          ),
           centerTitle: true,
           actions: [
             IconButton(
@@ -61,8 +83,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
           flexibleSpace: Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                // begin: Alignment.topCenter,
-                // end: Alignment.bottomCenter,
                 colors: [
                   Theme.of(context).colorScheme.onPrimary,
                   Theme.of(context).colorScheme.surface,
@@ -75,7 +95,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         body: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-                image: Svg(
+                image: svg_provider.Svg(
                   'assets/images/app_inverted.svg',
                 ),
                 colorFilter: ColorFilter.mode(

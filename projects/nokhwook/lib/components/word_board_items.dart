@@ -14,7 +14,7 @@ class HeadlineItem extends StatelessWidget {
   styles(context) {
     switch (type) {
       case HeadlineItemType.small:
-        return Theme.of(context).textTheme.headlineSmall;
+        return Theme.of(context).textTheme.bodyLarge;
       case HeadlineItemType.medium:
       default:
         return Theme.of(context).textTheme.headlineMedium;
@@ -27,7 +27,7 @@ class HeadlineItem extends StatelessWidget {
       Text(
         title.toUpperCase(),
         textAlign: TextAlign.center,
-        style: Theme.of(context).textTheme.labelMedium,
+        style: Theme.of(context).textTheme.titleSmall,
       ),
       Text(
         text,

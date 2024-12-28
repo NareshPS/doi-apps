@@ -20,7 +20,7 @@ class WordExamples extends StatelessWidget {
                   child: Text(
                     'Examples'.toUpperCase(),
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.labelMedium,
+                    style: Theme.of(context).textTheme.titleSmall,
                   ),
                 )
               ])

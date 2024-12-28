@@ -62,20 +62,17 @@ class _WelcomeState extends State<Welcome> {
         Center(
           child: Padding(
             padding: const EdgeInsets.only(top: 8.0),
-            child: Padding(
+            child: Container(
               padding: const EdgeInsets.all(8.0),
-              child: Container(
-                padding: const EdgeInsets.all(8.0),
-                child: memorizedSubset.subset.isNotEmpty
-                    ? Text(
-                        'You have saved ${memorizedSubset.subset.length} ${memorizedSubset.subset.length == 1 ? 'word' : 'words'} to practice.',
-                        style: Theme.of(context).textTheme.headlineSmall,
-                      )
-                    : Text(
-                        'Click the shuffle tab to take a look at some words. The saved words will appear here!',
-                        style: Theme.of(context).textTheme.headlineSmall,
-                      ),
-              ),
+              child: memorizedSubset.subset.isNotEmpty
+                  ? Text(
+                      'You have ${memorizedSubset.subset.length} saved ${memorizedSubset.subset.length == 1 ? 'word' : 'words'} to practice.',
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    )
+                  : Text(
+                      'Click the shuffle tab to take a look at some words. The saved words will appear here!',
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    ),
             ),
           ),
         ),

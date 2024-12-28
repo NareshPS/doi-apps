@@ -31,7 +31,9 @@ mixin OverlayStateMixin<T extends StatefulWidget> on State<T> {
       top: box.localToGlobal(Offset.zero).dy,
       child: GestureDetector(
         onTap: removeOverlay,
-        child: Container(color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.75), child: child),
+        child: Container(
+            color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.75),
+            child: child),
       ),
     );
   }
@@ -45,7 +47,6 @@ class WordGridItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Theme.of(context).colorScheme.secondary,
       elevation: 1.0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(5.0),
@@ -53,10 +54,8 @@ class WordGridItem extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Center(
-          child: Text(
-            word.items[0].phrase,
-            style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: Theme.of(context).colorScheme.onSecondary),
-          ),
+          child: Text(word.items[0].phrase,
+              style: Theme.of(context).textTheme.labelLarge),
         ),
       ),
     );
@@ -68,7 +67,11 @@ class WordGrid extends StatefulWidget {
   final List<int> subset;
   final Vocab vocab;
 
-  const WordGrid({super.key, required this.title, required this.vocab, required this.subset});
+  const WordGrid(
+      {super.key,
+      required this.title,
+      required this.vocab,
+      required this.subset});
 
   @override
   State<WordGrid> createState() => _WordGridState();
@@ -99,10 +102,12 @@ class _WordGridState extends State<WordGrid> with OverlayStateMixin {
                     xs: 4,
                     child: GestureDetector(
                       onTap: () {
-                        toggleOverlay(Stage(title: widget.title, subset: widget.subset));
+                        toggleOverlay(
+                            Stage(title: widget.title, subset: widget.subset));
                       },
                       child: WordGridItem(
-                          header: widget.vocab.header, word: widget.vocab[index]),
+                          header: widget.vocab.header,
+                          word: widget.vocab[index]),
                     )))
                 .toList()),
       ),

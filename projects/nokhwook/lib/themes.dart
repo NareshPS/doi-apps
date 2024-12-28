@@ -17,60 +17,55 @@ class Themes {
       colorScheme: lightColorScheme,
       textTheme: Typography.blackMountainView.copyWith(
           titleSmall: TextStyle(
-              color: Colors.grey[500], letterSpacing: 1.35, height: 1.5),
-          titleMedium: TextStyle(
-              color: Colors.grey[600], letterSpacing: 1.0, height: 1.5),
+            color: Colors.grey[500],
+            fontWeight: FontWeight.bold,
+          ),
+          titleMedium: TextStyle(color: Colors.grey[600]),
+          titleLarge: TextStyle(color: lightColorScheme.secondary),
           headlineSmall: TextStyle(
-              fontSize: 18,
-              color: lightColorScheme.secondary,
-              letterSpacing: 1),
+            color: lightColorScheme.secondary,
+          ),
           headlineMedium: TextStyle(color: lightColorScheme.primary),
           labelLarge: TextStyle(
-              color: Colors.grey[500],
-              fontWeight: FontWeight.bold,
-              letterSpacing: 1.35,
-              height: 1.5),
+            color: lightColorScheme.secondary.withOpacity(0.85),
+            fontWeight: FontWeight.bold,
+          ),
           labelMedium: TextStyle(
-              color: Colors.grey[500],
-              fontWeight: FontWeight.bold,
-              letterSpacing: 1.0,
-              height: 1.5),
+            color: lightColorScheme.secondary.withOpacity(0.85),
+            fontWeight: FontWeight.bold,
+          ),
           bodyMedium: TextStyle(
-              fontSize: 16,
-              color: lightColorScheme.secondary,
-              letterSpacing: .6)));
+            color: lightColorScheme.secondary,
+          ),
+          bodyLarge: TextStyle(
+            color: lightColorScheme.secondary,
+          )));
 
   static ThemeData get darkTheme => ThemeData.from(
       colorScheme: darkColorScheme,
       textTheme: Typography.blackMountainView.copyWith(
           titleSmall: TextStyle(
-              color: Colors.grey[500], letterSpacing: 1.35, height: 1.5),
-          titleMedium: TextStyle(
-              color: Colors.grey[600], letterSpacing: 1.0, height: 1.5),
+            color: Colors.grey[500],
+            fontWeight: FontWeight.bold,
+          ),
+          titleMedium: TextStyle(color: Colors.grey[600]),
+          titleLarge: TextStyle(color: darkColorScheme.secondary),
           headlineSmall: TextStyle(
-              fontSize: 18, color: darkColorScheme.secondary, letterSpacing: 1),
+            color: darkColorScheme.secondary,
+          ),
           headlineMedium: TextStyle(color: darkColorScheme.primary),
           labelLarge: TextStyle(
-              color: Colors.grey[500],
-              fontWeight: FontWeight.bold,
-              letterSpacing: 1.35,
-              height: 1.5),
+            color: darkColorScheme.secondary.withOpacity(0.85),
+            fontWeight: FontWeight.bold,
+          ),
           labelMedium: TextStyle(
-              color: Colors.grey[500],
-              fontWeight: FontWeight.bold,
-              letterSpacing: 1.0,
-              height: 1.5),
+            color: darkColorScheme.secondary.withOpacity(0.85),
+            fontWeight: FontWeight.bold,
+          ),
           bodyMedium: TextStyle(
-              fontSize: 16, color: darkColorScheme.secondary, letterSpacing: .6)
-          // headlineSmall: TextStyle(color: lightColorScheme.secondary),
-          // labelLarge: const TextStyle(
-          //   color: Colors.grey,
-          //   letterSpacing: .75,
-          // ),
-          // labelMedium: TextStyle(
-          //   color: darkColorScheme.primary,
-          //   fontWeight: FontWeight.bold,
-          //   letterSpacing: .5,
-          // ),
-          ));
+            color: darkColorScheme.secondary,
+          ),
+          bodyLarge: TextStyle(
+            color: darkColorScheme.secondary,
+          )));
 }
