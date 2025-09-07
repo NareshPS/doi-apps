@@ -12,7 +12,8 @@ class NotificationService {
 
   Future<bool?> initialize(onReceive) async {
     const notificationInitializationSettings = InitializationSettings(
-        android: AndroidInitializationSettings('@mipmap/ic_launcher_round'));
+        android: AndroidInitializationSettings('@mipmap/ic_launcher_round'),
+        macOS: DarwinInitializationSettings());
 
     return plugin.initialize(
       notificationInitializationSettings,
