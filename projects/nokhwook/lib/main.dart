@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:logger/logger.dart';
 import 'package:nokhwook/features/engagement/word_reminder.dart';
+import 'package:nokhwook/features/preferences/global_preferences.dart';
 import 'package:nokhwook/features/stages/random_stage_preferences.dart';
 import 'package:nokhwook/features/welcome/memorized_subset.dart';
 import 'package:nokhwook/models/vocab.dart';
@@ -60,6 +61,10 @@ Future<void> main() async {
       FutureProvider(
           create: (context) => SharedPreferences.getInstance(),
           initialData: null),
+      ChangeNotifierProvider(create: (context) {
+        final prefs = context.read<SharedPreferences?>();
+        return prefs != null ? GlobalPreferences(prefs) : null;
+      }),
       ChangeNotifierProvider(create: (context) {
         final prefs = context.read<SharedPreferences?>();
         return prefs != null ? RandomStagePreferences(prefs) : null;

@@ -54,6 +54,7 @@ dependencies:
   subtitle_wrapper_package: ^2.1.1
   flutter_svg_provider: ^1.0.7
   flutter_svg: ^2.0.16
+  flutter_toggle_tab: ^1.5.1
 
 dev_dependencies:
   flutter_test:

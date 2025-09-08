@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
+import 'package:nokhwook/features/preferences/global_preferences.dart';
 import 'package:nokhwook/features/stages/random_stage_preferences.dart';
 import 'package:nokhwook/features/welcome/memorized_subset.dart';
 import 'package:nokhwook/main.dart';
@@ -13,6 +15,12 @@ class AppPreferences extends StatefulWidget {
 }
 
 class _AppPreferencesState extends State<AppPreferences> {
+  // Related to global preferences
+  static const targetLanguages = ['TH', 'VT'];
+
+  late GlobalPreferences globalPreferences;
+  late String targetLanguage;
+
   // Related to random stage preferences
   late RandomStagePreferences randomStagePreferences;
   late double randomSampleSize;
@@ -28,6 +36,10 @@ class _AppPreferencesState extends State<AppPreferences> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+
+    // Initialize fields for global preferences
+    globalPreferences = context.watch<GlobalPreferences>();
+    targetLanguage = globalPreferences.targetLanguage;
 
     // Initialize fields for random stage
     randomStagePreferences = context.watch<RandomStagePreferences>();
@@ -54,6 +66,42 @@ class _AppPreferencesState extends State<AppPreferences> {
   Widget build(BuildContext context) {
     return SettingsList(
       sections: [
+        SettingsSection(
+          title: Text('Global'.toUpperCase(),
+              style: Theme.of(context).textTheme.titleSmall),
+          tiles: [
+            SettingsTile.navigation(
+              title: Text(
+                'Target Language',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              leading: Icon(
+                Icons.language,
+                color: Theme.of(context).colorScheme.primary,
+              ),
+              trailing: Text(targetLanguage.toUpperCase(),
+                  style: Theme.of(context)
+                      .textTheme
+                      .labelLarge!
+                      .copyWith(color: Theme.of(context).colorScheme.primary)),
+              value: Column(
+                children: [
+                  const Text(
+                      'Select one of Thai (TH) or Vietnamese (VT) languages to learn.'),
+                  FlutterToggleTab(
+                    dataTabs: targetLanguages
+                        .map((lang) => DataTab(title: lang))
+                        .toList(),
+                    selectedLabelIndex: (index) => setState(() {
+                      targetLanguage = targetLanguages[index];
+                    }),
+                    selectedIndex: targetLanguages.indexOf(targetLanguage),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
         SettingsSection(
             title: Text('Home'.toUpperCase(),
                 style: Theme.of(context).textTheme.titleSmall),
