@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tuple/tuple.dart';
 
 class GlobalPreferences extends ChangeNotifier {
-  static const defaultTargetLanguage = Tuple2('targetLanguage', 'TH');
+  static const defaultTargetLanguage = Tuple2('targetLanguage', 'vt');
 
   final SharedPreferences prefs;
 

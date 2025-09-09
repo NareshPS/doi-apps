@@ -28,6 +28,15 @@ class SubtitlesService {
   }
 
   search(term, lang, {start = 0}) {
+    final languageAvailable = languageSubtitles.containsKey(lang);
+
+    // If the language is not available, return null.
+    if (!languageAvailable) {
+      logger
+          .w('Term: $term Lang: $lang. Subtitles are not available for $lang.');
+      return null;
+    }
+
     final subtitles = languageSubtitles[lang]!.subtitles;
     final match =
         subtitles.indexWhere((item) => item.text.contains(term), start);

@@ -6,7 +6,8 @@ class ResolvePreferences {
     return (override ?? prefs.get(setting.item1) ?? setting.item2) as T;
   }
 
-  static List<String> resolveList(SharedPreferences prefs, Tuple2 setting, {override}) {
+  static List<String> resolveList(SharedPreferences prefs, Tuple2 setting,
+      {override}) {
     return override ?? prefs.getStringList(setting.item1) ?? setting.item2;
   }
 }

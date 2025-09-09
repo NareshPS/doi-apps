@@ -4,6 +4,7 @@ import 'package:nokhwook/features/preferences/global_preferences.dart';
 import 'package:nokhwook/features/stages/random_stage_preferences.dart';
 import 'package:nokhwook/features/welcome/memorized_subset.dart';
 import 'package:nokhwook/main.dart';
+import 'package:nokhwook/services/constants_service.dart';
 import 'package:provider/provider.dart';
 import 'package:settings_ui/settings_ui.dart';
 
@@ -16,8 +17,6 @@ class AppPreferences extends StatefulWidget {
 
 class _AppPreferencesState extends State<AppPreferences> {
   // Related to global preferences
-  static const targetLanguages = ['TH', 'VT'];
-
   late GlobalPreferences globalPreferences;
   late String targetLanguage;
 
@@ -89,13 +88,14 @@ class _AppPreferencesState extends State<AppPreferences> {
                   const Text(
                       'Select one of Thai (TH) or Vietnamese (VT) languages to learn.'),
                   FlutterToggleTab(
-                    dataTabs: targetLanguages
+                    dataTabs: ConstantsService.targetLanguages
                         .map((lang) => DataTab(title: lang))
                         .toList(),
                     selectedLabelIndex: (index) => setState(() {
-                      targetLanguage = targetLanguages[index];
+                      targetLanguage = ConstantsService.targetLanguages[index];
                     }),
-                    selectedIndex: targetLanguages.indexOf(targetLanguage),
+                    selectedIndex: ConstantsService.targetLanguages
+                        .indexOf(targetLanguage),
                   ),
                 ],
               ),

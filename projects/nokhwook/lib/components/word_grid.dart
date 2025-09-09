@@ -32,7 +32,9 @@ mixin OverlayStateMixin<T extends StatefulWidget> on State<T> {
       child: GestureDetector(
         onTap: removeOverlay,
         child: Container(
-            color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.75),
+            color: Theme.of(context)
+                .scaffoldBackgroundColor
+                .withValues(alpha: 0.75),
             child: child),
       ),
     );

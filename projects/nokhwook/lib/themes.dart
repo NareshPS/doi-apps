@@ -27,11 +27,11 @@ class Themes {
           ),
           headlineMedium: TextStyle(color: lightColorScheme.primary),
           labelLarge: TextStyle(
-            color: lightColorScheme.secondary.withOpacity(0.85),
+            color: lightColorScheme.secondary.withValues(alpha: 0.85),
             fontWeight: FontWeight.bold,
           ),
           labelMedium: TextStyle(
-            color: lightColorScheme.secondary.withOpacity(0.85),
+            color: lightColorScheme.secondary.withValues(alpha: 0.85),
             fontWeight: FontWeight.bold,
           ),
           bodyMedium: TextStyle(
@@ -55,11 +55,11 @@ class Themes {
           ),
           headlineMedium: TextStyle(color: darkColorScheme.primary),
           labelLarge: TextStyle(
-            color: darkColorScheme.secondary.withOpacity(0.85),
+            color: darkColorScheme.secondary.withValues(alpha: 0.85),
             fontWeight: FontWeight.bold,
           ),
           labelMedium: TextStyle(
-            color: darkColorScheme.secondary.withOpacity(0.85),
+            color: darkColorScheme.secondary.withValues(alpha: 0.85),
             fontWeight: FontWeight.bold,
           ),
           bodyMedium: TextStyle(

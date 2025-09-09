@@ -21,8 +21,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 final logger = Logger(printer: PrettyPrinter(methodCount: 5));
 final errorController = StreamController<String>();
 
-Future<Vocab> loadVocabulary() async {
-  String vocab = await rootBundle.loadString('assets/vocab.csv');
+Future<Vocab> loadVocabulary(String language) async {
+  String vocab =
+      await rootBundle.loadString('assets/vocab_${language.toLowerCase()}.csv');
   List<List<dynamic>> items = const CsvToListConverter().convert(vocab);
 
   return Vocab.parse(items);
@@ -51,12 +52,8 @@ Future<SubtitlesService> loadSubtitles() async {
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  final vocab = await loadVocabulary();
-  initializeNotifications(vocab);
-
   runApp(MultiProvider(
     providers: [
-      FutureProvider(create: (context) => loadVocabulary(), initialData: null),
       FutureProvider(create: (context) => loadSubtitles(), initialData: null),
       FutureProvider(
           create: (context) => SharedPreferences.getInstance(),
@@ -65,13 +62,34 @@ Future<void> main() async {
         final prefs = context.read<SharedPreferences?>();
         return prefs != null ? GlobalPreferences(prefs) : null;
       }),
+      FutureProvider(
+        create: (context) {
+          final prefs = context.read<GlobalPreferences?>();
+          if (prefs != null) {
+            var vocab = loadVocabulary(prefs.targetLanguage);
+            logger.i('Loading vocab for language: ${prefs.targetLanguage}');
+
+            // Initialize notifications after vocab is loaded
+            vocab.then((vocab) => initializeNotifications(vocab));
+
+            return vocab;
+          } else {
+            return null;
+          }
+        },
+        initialData: null,
+      ),
       ChangeNotifierProvider(create: (context) {
         final prefs = context.read<SharedPreferences?>();
         return prefs != null ? RandomStagePreferences(prefs) : null;
       }),
       ChangeNotifierProvider(create: (context) {
         final prefs = context.read<SharedPreferences?>();
-        return prefs != null ? MemorizedSubset(prefs) : null;
+        final globalPreferences = context.read<GlobalPreferences?>();
+
+        return prefs != null && globalPreferences != null
+            ? MemorizedSubset(prefs, globalPreferences)
+            : null;
       }),
       StreamProvider<WordReminderMessage?>(
           create: (context) => WordReminder.messageController.stream,

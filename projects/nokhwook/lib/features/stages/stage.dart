@@ -1,6 +1,7 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:nokhwook/components/fixable_floating_action_button.dart';
+import 'package:nokhwook/features/preferences/global_preferences.dart';
 import 'package:nokhwook/features/welcome/memorized_subset.dart';
 import 'package:nokhwook/main.dart';
 import 'package:nokhwook/models/vocab.dart';
@@ -44,21 +45,22 @@ class _StageState extends State<Stage> {
         ' Speed: ${widget.playSpeed}');
   }
 
-  stopAutoplay() {
+  void stopAutoplay() {
     controller.stopAutoplay();
+
     setState(() {
       autoPlaying = false;
     });
   }
 
-  startAutoplay() {
+  void startAutoplay() {
     controller.startAutoplay();
     setState(() {
       autoPlaying = true;
     });
   }
 
-  Widget buildItem(index) => Padding(
+  Widget buildItem(int index) => Padding(
         padding: const EdgeInsets.all(8.0),
         child: WordBoard(
           header: vocab.header,
@@ -70,11 +72,12 @@ class _StageState extends State<Stage> {
   @override
   Widget build(BuildContext context) {
     final prefs = context.watch<SharedPreferences>();
-    final memorizedSubset = MemorizedSubset(prefs);
+    final globalPreferences = context.watch<GlobalPreferences>();
+    final memorizedSubset = MemorizedSubset(prefs, globalPreferences);
 
     return VisibilityDetector(
       onVisibilityChanged: (info) =>
-          info.visibleFraction < 0.1 ? stopAutoplay() : null,
+          info.visibleFraction < 0.1 && mounted ? stopAutoplay() : null,
       key: visibilityKey,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

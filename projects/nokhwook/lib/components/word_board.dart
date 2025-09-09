@@ -34,7 +34,8 @@ class WordBoard extends StatelessWidget {
     return SeparatedColumn(
       cushion: SeparatedColumnCushion.none,
       separator: (context) => Divider(
-        color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0),
+        // color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0),
+        color: Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0),
       ),
       children: List<Widget>.generate(
               header.length,
@@ -50,7 +51,7 @@ class WordBoard extends StatelessWidget {
                   Divider(
                     color: Theme.of(context)
                         .scaffoldBackgroundColor
-                        .withOpacity(0),
+                        .withValues(alpha: 0),
                   ),
                   WordExamples(
                     languages: header,
