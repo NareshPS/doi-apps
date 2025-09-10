@@ -8,27 +8,21 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
-//val keyFile = rootProject.file("key.properties")
-//val keyProperties = Properties()
+val keyFile = rootProject.file("key.properties")
+val keyProperties = Properties()
 
 // Load key properties for signingConfigs
-//keyProperties.load(FileInputStream(keyFile))
+keyProperties.load(FileInputStream(keyFile))
 
 android {
-    //signingConfigs {
-    //    create("debug") {
-    //      keyAlias = keyProperties["keyAlias"] as String
-    //      keyPassword = keyProperties["keyPassword"] as String
-    //      storeFile = file(keyProperties["storeFile"] as String)
-    //      storePassword = keyProperties["storePassword"] as String
-    //    }
-    //    create("release") {
-    //      keyAlias = keyProperties["keyAlias"] as String
-    //      keyPassword = keyProperties["keyPassword"] as String
-    //      storeFile = file(keyProperties["storeFile"] as String)
-    //      storePassword = keyProperties["storePassword"] as String
-    //    }
-    //}
+    signingConfigs {
+        create("release") {
+          keyAlias = keyProperties["keyAlias"] as String
+          keyPassword = keyProperties["keyPassword"] as String
+          storeFile = file(keyProperties["storeFile"] as String)
+          storePassword = keyProperties["storePassword"] as String
+        }
+    }
 
     namespace = "com.doiapps.nokhwook"
     compileSdk = flutter.compileSdkVersion
@@ -59,7 +53,7 @@ android {
         release {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
-            // signingConfig = signingConfigs.getByName("release")
+            signingConfig = signingConfigs.getByName("release")
         }
     }
 }
