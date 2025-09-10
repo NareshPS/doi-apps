@@ -44,7 +44,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     super.dispose();
   }
 
-  switchTab(index) {
+  void switchTab(int index) {
     setState(() {
       selectedTab = index;
     });
@@ -62,24 +62,29 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
       appBar: AppBar(
         title: Stack(
           children: [
-            Align(
-              alignment: Alignment.centerLeft,
-              child: SvgPicture.asset(
-                'assets/images/app_inverted.svg',
-                width: 28,
-                height: 28,
-                colorFilter: ColorFilter.mode(
-                  Theme.of(context).colorScheme.primary,
-                  BlendMode.srcIn,
+            Row(
+              children: [
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: SvgPicture.asset(
+                    'assets/images/app_inverted.svg',
+                    width: 28,
+                    height: 28,
+                    colorFilter: ColorFilter.mode(
+                      Theme.of(context).colorScheme.primary,
+                      BlendMode.srcIn,
+                    ),
+                  ),
                 ),
-              ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Text(
+                    'Nokhwook: $languageName Cards',
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                ),
+              ],
             ),
-            Align(
-                alignment: Alignment.center,
-                child: Text(
-                  'Nokhwook: $languageName Cards',
-                  style: Theme.of(context).textTheme.titleLarge,
-                )),
           ],
         ),
         centerTitle: true,

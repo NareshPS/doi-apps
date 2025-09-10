@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tuple/tuple.dart';
 
 class GlobalPreferences extends ChangeNotifier {
-  static const defaultTargetLanguage = Tuple2('targetLanguage', 'vt');
+  static const defaultTargetLanguage = Tuple2('targetLanguage', 'th');
 
   final SharedPreferences prefs;
 
@@ -13,10 +13,10 @@ class GlobalPreferences extends ChangeNotifier {
   String get targetLanguage =>
       ResolvePreferences.resolve<String>(prefs, defaultTargetLanguage);
 
-  set targetLanguage(value) => updateAndNotify(
+  set targetLanguage(String value) => updateAndNotify(
       () => prefs.setString(defaultTargetLanguage.item1, value));
 
-  updateAndNotify(callback) async {
+  void updateAndNotify(callback) async {
     await callback();
     notifyListeners();
   }

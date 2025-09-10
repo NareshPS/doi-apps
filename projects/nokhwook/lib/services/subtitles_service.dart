@@ -19,7 +19,7 @@ class SubtitlesService {
     return subtitles;
   }
 
-  load() async {
+  Future<void> load() async {
     final futures =
         sources.entries.map<Future<Subtitles>>((e) => loadSource(e.value));
 

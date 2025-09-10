@@ -107,6 +107,7 @@ Future<void> main() async {
         routes: {
           '/': (context) {
             return (Provider.of<SharedPreferences?>(context) != null &&
+                    Provider.of<GlobalPreferences?>(context) != null &&
                     Provider.of<Vocab?>(context) != null &&
                     Provider.of<SubtitlesService?>(context) != null)
                 ? const Home()

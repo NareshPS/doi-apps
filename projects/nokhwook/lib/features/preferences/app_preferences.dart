@@ -6,6 +6,7 @@ import 'package:nokhwook/features/welcome/memorized_subset.dart';
 import 'package:nokhwook/main.dart';
 import 'package:nokhwook/services/constants_service.dart';
 import 'package:provider/provider.dart';
+import 'package:restart_app/restart_app.dart';
 import 'package:settings_ui/settings_ui.dart';
 
 class AppPreferences extends StatefulWidget {
@@ -87,15 +88,51 @@ class _AppPreferencesState extends State<AppPreferences> {
                 children: [
                   const Text(
                       'Select one of Thai (TH) or Vietnamese (VT) languages to learn.'),
-                  FlutterToggleTab(
-                    dataTabs: ConstantsService.targetLanguages
-                        .map((lang) => DataTab(title: lang))
-                        .toList(),
-                    selectedLabelIndex: (index) => setState(() {
-                      targetLanguage = ConstantsService.targetLanguages[index];
-                    }),
-                    selectedIndex: ConstantsService.targetLanguages
-                        .indexOf(targetLanguage),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: FlutterToggleTab(
+                      width: 60,
+                      height: 40,
+                      borderRadius: 4,
+                      selectedTextStyle: TextStyle(
+                          color: Theme.of(context).colorScheme.onPrimary),
+                      dataTabs: ConstantsService.targetLanguages
+                          .map((lang) => DataTab(title: lang.toUpperCase()))
+                          .toList(),
+                      selectedLabelIndex: (index) {
+                        logger.i(
+                            'Selected language: ${ConstantsService.targetLanguages[index]}');
+                        showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                                  title: const Text('Restart Required'),
+                                  content: const Text(
+                                      'We need to restart Nokhwook to apply the language change. Do you want to proceed?'),
+                                  actions: [
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: const Text('Cancel')),
+                                    TextButton(
+                                        onPressed: () {
+                                          globalPreferences.targetLanguage =
+                                              ConstantsService
+                                                  .targetLanguages[index];
+                                          setState(() => targetLanguage =
+                                              ConstantsService
+                                                  .targetLanguages[index]);
+                                          Navigator.of(context).pop();
+                                          logger.w('Restarting app...');
+                                          Restart.restartApp();
+                                        },
+                                        child: const Text('Proceed')),
+                                  ],
+                                ));
+                      },
+                      selectedIndex: ConstantsService.targetLanguages
+                          .indexOf(targetLanguage),
+                    ),
                   ),
                 ],
               ),
