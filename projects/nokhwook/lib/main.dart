@@ -12,6 +12,7 @@ import 'package:nokhwook/features/stages/random_stage_preferences.dart';
 import 'package:nokhwook/features/welcome/memorized_subset.dart';
 import 'package:nokhwook/models/vocab.dart';
 import 'package:nokhwook/pages/home.dart';
+import 'package:nokhwook/services/constants_service.dart';
 import 'package:nokhwook/services/notification_service.dart';
 import 'package:nokhwook/services/subtitles_service.dart';
 import 'package:nokhwook/themes.dart';
@@ -29,7 +30,7 @@ Future<Vocab> loadVocabulary(String language) async {
   return Vocab.parse(items);
 }
 
-initializeNotifications(vocab) async {
+Future<WordReminder> initializeNotifications(Vocab vocab) async {
   final notificationService = NotificationService();
   final reminder = WordReminder(notificationService: notificationService);
 
@@ -37,13 +38,8 @@ initializeNotifications(vocab) async {
   return reminder;
 }
 
-Future<SubtitlesService> loadSubtitles() async {
-  final sources = {
-    'Thai': 'assets/subtitles/the.expanse.s06e06.babylons.ashes.th.srt',
-    'English': 'assets/subtitles/the.expanse.s06e06.babylons.ashes.en.srt',
-    // 'Thai': 'assets/subtitles/captain.america.the.first.avenger.2011.th.srt',
-    // 'English': 'assets/subtitles/captain.america.the.first.avenger.2011.en.srt',
-  };
+Future<SubtitlesService> loadSubtitles(String targetLanguage) async {
+  final sources = ConstantsService.subtitleSources[targetLanguage] ?? {};
   final service = SubtitlesService(sources: sources);
   await service.load();
   return service;
@@ -54,7 +50,6 @@ Future<void> main() async {
 
   runApp(MultiProvider(
     providers: [
-      FutureProvider(create: (context) => loadSubtitles(), initialData: null),
       FutureProvider(
           create: (context) => SharedPreferences.getInstance(),
           initialData: null),
@@ -62,6 +57,13 @@ Future<void> main() async {
         final prefs = context.read<SharedPreferences?>();
         return prefs != null ? GlobalPreferences(prefs) : null;
       }),
+      FutureProvider(
+          create: (context) {
+            final prefs = context.read<GlobalPreferences?>();
+
+            return prefs != null ? loadSubtitles(prefs.targetLanguage) : null;
+          },
+          initialData: null),
       FutureProvider(
         create: (context) {
           final prefs = context.read<GlobalPreferences?>();
