@@ -63,13 +63,16 @@ class SubtitlesService {
   }
 
   Map<String, List<int>> alignedSearch(
-      {required term, required primaryLanguage, count = 1}) {
+      {required String term,
+      required String primaryLanguage,
+      required List<String> otherLanguages,
+      count = 1}) {
     final matchIds =
         searchMany(term: term, lang: primaryLanguage, count: count);
-    final secondaryLanguages =
-        languageSubtitles.keys.where((lang) => lang != primaryLanguage);
+    // final secondaryLanguages =
+    //     languageSubtitles.keys.where((lang) => lang != primaryLanguage);
 
-    final secondaryAlignments = secondaryLanguages.map((lang) {
+    final secondaryAlignments = otherLanguages.map((lang) {
       return matchIds.map((matchId) {
         final searchMatch =
             languageSubtitles[primaryLanguage]!.subtitles[matchId];
@@ -90,8 +93,7 @@ class SubtitlesService {
       }).toList();
     });
 
-    final alignments =
-        Map.fromIterables(secondaryLanguages, secondaryAlignments);
+    final alignments = Map.fromIterables(otherLanguages, secondaryAlignments);
 
     // Add primary results to the aligned matches.
     alignments[primaryLanguage] = matchIds;
@@ -99,17 +101,22 @@ class SubtitlesService {
     return alignments;
   }
 
-  Map<String, List<String>> resolve({required term, required lang, count = 1}) {
+  Map<String, List<String>> resolve(
+      {required String term, required List<String> languages, count = 1}) {
     // List<int> matchIds = searchMany(term: term, lang: lang, count: count);
-    final alignments =
-        alignedSearch(term: term, primaryLanguage: lang, count: count);
+    final primaryLanguage = languages.first;
+    final alignments = alignedSearch(
+        term: term,
+        primaryLanguage: primaryLanguage,
+        otherLanguages: languages.sublist(1),
+        count: count);
 
     final alignedMatches = alignments.map((key, value) {
       return MapEntry(
           key,
           value
               .map((subId) => withContext(languageSubtitles[key]!.subtitles,
-                  subId, key == lang ? 0 : alignmentContext))
+                  subId, key == primaryLanguage ? 0 : alignmentContext))
               .toList());
     });
 

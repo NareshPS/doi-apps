@@ -11,7 +11,7 @@ class WordBoard extends StatelessWidget {
   final Word word;
   final Function memorize;
 
-  styles(context) => [
+  List<TextStyle?> styles(BuildContext context) => [
         Theme.of(context).textTheme.headlineMedium,
         Theme.of(context).textTheme.headlineSmall,
       ];
@@ -28,8 +28,8 @@ class WordBoard extends StatelessWidget {
     final searchTerm = word.items[primaryLangId].phrase;
     // const searchTerm = 'จาน';
     // const searchTerm = 'กัน';
-    final examples = subService.resolve(
-        term: searchTerm, lang: header[primaryLangId], count: 3);
+    final examples =
+        subService.resolve(term: searchTerm, languages: header, count: 3);
 
     return SeparatedColumn(
       cushion: SeparatedColumnCushion.none,
